@@ -41,153 +41,158 @@
 </head>
 <body class="p-8">
 
-  <!-- HEADER -->
-  <div class="grid md:grid-cols-3 gap-6 mb-8 items-start">
-    <!-- Foto -->
-    <div class="card flex flex-col items-center text-center">
-      <div class="relative">
-        <img src="https://via.placeholder.com/200" class="w-40 h-40 rounded-full object-cover border-4 border-orange-500 shadow-xl">
-        <div class="absolute -top-3 -right-3 text-orange-400"><i data-lucide="paperclip"></i></div>
+  <!-- CONTENEDOR CENTRAL -->
+  <div class="max-w-5xl mx-auto space-y-8">
+
+    <!-- HEADER -->
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+      <!-- Foto -->
+      <div class="card flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="https://via.placeholder.com/200" class="w-40 h-40 rounded-full object-cover border-4 border-orange-500 shadow-xl">
+          <div class="absolute -top-3 -right-3 text-orange-400"><i data-lucide="paperclip"></i></div>
+        </div>
+        <h1 class="mt-4 text-2xl font-extrabold">David Santiago Camacho Mora</h1>
+        <p class="highlight text-lg font-semibold">Editor de video | Creador de contenido | VFX & 3D</p>
+        <p class="text-gray-300">📍 Chía, Colombia</p>
       </div>
-      <h1 class="mt-4 text-2xl font-extrabold">David Santiago Camacho Mora</h1>
-      <p class="highlight text-lg font-semibold">Editor de video | Creador de contenido | VFX & 3D</p>
-      <p class="text-gray-300">📍 Chía, Colombia</p>
+
+      <!-- Sobre mí -->
+      <div class="card md:col-span-2">
+        <h2 class="text-xl font-bold highlight mb-3">Sobre mí</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Apasionado por la creación audiovisual, el diseño 3D y la edición de video.
+          Experiencia en contenido digital, branding visual y narrativas dinámicas.
+        </p>
+        <!-- Mini cards -->
+        <div class="grid grid-cols-2 gap-4 mt-6">
+          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
+            <i data-lucide="user" class="text-orange-500 w-6 h-6 mb-1"></i>
+            <p class="text-sm text-gray-400">Edad</p>
+            <p class="text-lg font-bold">23</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
+            <i data-lucide="ruler" class="text-orange-500 w-6 h-6 mb-1"></i>
+            <p class="text-sm text-gray-400">Altura</p>
+            <p class="text-lg font-bold">1.75m</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Sobre mí -->
-    <div class="card md:col-span-2">
-      <h2 class="text-xl font-bold highlight mb-3">Sobre mí</h2>
-      <p class="text-gray-300 leading-relaxed">
-        Apasionado por la creación audiovisual, el diseño 3D y la edición de video.
-        Experiencia en contenido digital, branding visual y narrativas dinámicas.
-      </p>
-      <!-- Mini cards -->
-      <div class="grid grid-cols-2 gap-4 mt-6">
-        <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
-          <i data-lucide="user" class="text-orange-500 w-6 h-6 mb-1"></i>
-          <p class="text-sm text-gray-400">Edad</p>
-          <p class="text-lg font-bold">23</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
-          <i data-lucide="ruler" class="text-orange-500 w-6 h-6 mb-1"></i>
-          <p class="text-sm text-gray-400">Altura</p>
-          <p class="text-lg font-bold">1.75m</p>
-        </div>
+    <!-- EDUCACIÓN + CONTACTO -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card md:col-span-2">
+        <h2 class="text-xl font-bold highlight mb-3">Educación</h2>
+        <ul class="space-y-3 text-gray-300">
+          <li>🎓 <b>Ingeniería Multimedia</b> – UMNG (2021 – Presente)</li>
+          <li>📷 <b>Fotografía Básica</b> – Casa de la Cultura Chía (2025 – Presente)</li>
+          <li>✏️ <b>Dibujo Digital</b> – Escuela Gaticolor (2023)</li>
+          <li>🎨 <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra (2016 – 2020)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="text-xl font-bold highlight mb-3">Contacto</h2>
+        <p class="flex items-center gap-2"><i data-lucide="mail"></i> david.camacho200424@gmail.com</p>
+        <p class="flex items-center gap-2"><i data-lucide="phone"></i> +57 320 896 8558</p>
+        <p class="flex items-center gap-2"><i data-lucide="instagram"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="hover:underline">@feuer.art</a></p>
       </div>
     </div>
-  </div>
 
-  <!-- EDUCACIÓN + CONTACTO -->
-  <div class="grid md:grid-cols-3 gap-6 mb-8">
-    <div class="card md:col-span-2">
-      <h2 class="text-xl font-bold highlight mb-3">Educación</h2>
-      <ul class="space-y-3 text-gray-300">
-        <li>🎓 <b>Ingeniería Multimedia</b> – UMNG (2021 – Presente)</li>
-        <li>📷 <b>Fotografía Básica</b> – Casa de la Cultura Chía (2025 – Presente)</li>
-        <li>✏️ <b>Dibujo Digital</b> – Escuela Gaticolor (2023)</li>
-        <li>🎨 <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra (2016 – 2020)</li>
-      </ul>
-    </div>
+    <!-- EXPERIENCIA -->
     <div class="card">
-      <h2 class="text-xl font-bold highlight mb-3">Contacto</h2>
-      <p class="flex items-center gap-2"><i data-lucide="mail"></i> david.camacho200424@gmail.com</p>
-      <p class="flex items-center gap-2"><i data-lucide="phone"></i> +57 320 896 8558</p>
-      <p class="flex items-center gap-2"><i data-lucide="instagram"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="hover:underline">@feuer.art</a></p>
-    </div>
-  </div>
-
-  <!-- EXPERIENCIA -->
-  <div class="card mb-8">
-    <h2 class="text-xl font-bold highlight mb-4">Experiencia</h2>
-    <div class="space-y-6 text-gray-300">
-      <div>
-        <p class="flex items-center gap-2 font-semibold"><i data-lucide="briefcase" class="text-orange-500"></i> Editor de video y gestor de redes – <span class="highlight">Sapiens Research</span></p>
-        <p class="text-sm text-gray-400">Ene 2025 – Presente | Remoto</p>
-        <p class="mt-1">Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
-      </div>
-      <div>
-        <p class="flex items-center gap-2 font-semibold"><i data-lucide="scissors" class="text-orange-500"></i> Editor de videos freelance</p>
-        <p class="text-sm text-gray-400">Ene 2022 – Presente | Remoto</p>
-        <p class="mt-1">Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
-      </div>
-      <div>
-        <p class="flex items-center gap-2 font-semibold"><i data-lucide="clapperboard" class="text-orange-500"></i> Creador de contenido – Instagram & TikTok</p>
-        <p class="text-sm text-gray-400">2024 – Presente</p>
-        <p class="mt-1">Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERRAMIENTAS + INTERESES -->
-  <div class="grid md:grid-cols-3 gap-6 mb-8">
-    <div class="card md:col-span-2">
-      <h2 class="text-xl font-bold highlight mb-4">Herramientas</h2>
-      <div class="space-y-4">
+      <h2 class="text-xl font-bold highlight mb-4">Experiencia</h2>
+      <div class="space-y-6 text-gray-300">
         <div>
-          <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Premiere Pro</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[90%]"></div></div>
+          <p class="flex items-center gap-2 font-semibold"><i data-lucide="briefcase" class="text-orange-500"></i> Editor de video y gestor de redes – <span class="highlight">Sapiens Research</span></p>
+          <p class="text-sm text-gray-400">Ene 2025 – Presente | Remoto</p>
+          <p class="mt-1">Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
         </div>
         <div>
-          <p class="flex items-center gap-2"><i data-lucide="wand-2" class="text-orange-500"></i> After Effects</p>
+          <p class="flex items-center gap-2 font-semibold"><i data-lucide="scissors" class="text-orange-500"></i> Editor de videos freelance</p>
+          <p class="text-sm text-gray-400">Ene 2022 – Presente | Remoto</p>
+          <p class="mt-1">Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
+        </div>
+        <div>
+          <p class="flex items-center gap-2 font-semibold"><i data-lucide="clapperboard" class="text-orange-500"></i> Creador de contenido – Instagram & TikTok</p>
+          <p class="text-sm text-gray-400">2024 – Presente</p>
+          <p class="mt-1">Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERRAMIENTAS + INTERESES -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card md:col-span-2">
+        <h2 class="text-xl font-bold highlight mb-4">Herramientas</h2>
+        <div class="space-y-4">
+          <div>
+            <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Premiere Pro</p>
+            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[90%]"></div></div>
+          </div>
+          <div>
+            <p class="flex items-center gap-2"><i data-lucide="wand-2" class="text-orange-500"></i> After Effects</p>
+            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
+          </div>
+          <div>
+            <p class="flex items-center gap-2"><i data-lucide="video" class="text-orange-500"></i> DaVinci Resolve</p>
+            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[70%]"></div></div>
+          </div>
+          <div>
+            <p class="flex items-center gap-2"><i data-lucide="circle-slashed" class="text-orange-500"></i> Blender</p>
+            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
+          </div>
+          <div>
+            <p class="flex items-center gap-2"><i data-lucide="image" class="text-orange-500"></i> Photoshop</p>
+            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[75%]"></div></div>
+          </div>
+          <div>
+            <p class="flex items-center gap-2"><i data-lucide="pencil-ruler" class="text-orange-500"></i> Illustrator</p>
+            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="text-xl font-bold highlight mb-4">Intereses</h2>
+        <div class="space-y-2 text-gray-300">
+          <p class="flex items-center gap-2"><i data-lucide="palette" class="text-orange-500"></i> Arte</p>
+          <p class="flex items-center gap-2"><i data-lucide="gamepad-2" class="text-orange-500"></i> Gaming</p>
+          <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Cine</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IDIOMAS -->
+    <div class="card">
+      <h2 class="text-xl font-bold highlight mb-4">Idiomas</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-gray-300">
+        <div>
+          <p class="font-semibold">Speaking</p>
+          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[40%]"></div></div>
+        </div>
+        <div>
+          <p class="font-semibold">Reading</p>
           <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
         </div>
         <div>
-          <p class="flex items-center gap-2"><i data-lucide="video" class="text-orange-500"></i> DaVinci Resolve</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[70%]"></div></div>
-        </div>
-        <div>
-          <p class="flex items-center gap-2"><i data-lucide="circle-slashed" class="text-orange-500"></i> Blender</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-        </div>
-        <div>
-          <p class="flex items-center gap-2"><i data-lucide="image" class="text-orange-500"></i> Photoshop</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[75%]"></div></div>
-        </div>
-        <div>
-          <p class="flex items-center gap-2"><i data-lucide="pencil-ruler" class="text-orange-500"></i> Illustrator</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
+          <p class="font-semibold">Writing</p>
+          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[50%]"></div></div>
         </div>
       </div>
     </div>
 
+    <!-- SHOWREEL -->
     <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4">Intereses</h2>
-      <div class="space-y-2 text-gray-300">
-        <p class="flex items-center gap-2"><i data-lucide="palette" class="text-orange-500"></i> Arte</p>
-        <p class="flex items-center gap-2"><i data-lucide="gamepad-2" class="text-orange-500"></i> Gaming</p>
-        <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Cine</p>
+      <h2 class="text-xl font-bold highlight mb-4 text-center">Showreel</h2>
+      <div class="relative max-w-3xl mx-auto rounded-xl overflow-hidden">
+        <iframe id="showreel" src="https://player.vimeo.com/video/1102083691?background=1&muted=1" 
+                class="w-full h-72" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
       </div>
     </div>
-  </div>
 
-  <!-- IDIOMAS -->
-  <div class="card mb-8">
-    <h2 class="text-xl font-bold highlight mb-4">Idiomas</h2>
-    <div class="grid md:grid-cols-3 gap-6 text-gray-300">
-      <div>
-        <p class="font-semibold">Speaking</p>
-        <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[40%]"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold">Reading</p>
-        <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold">Writing</p>
-        <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[50%]"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SHOWREEL -->
-  <div class="card">
-    <h2 class="text-xl font-bold highlight mb-4 text-center">Showreel</h2>
-    <div class="relative max-w-3xl mx-auto rounded-xl overflow-hidden">
-      <iframe id="showreel" src="https://player.vimeo.com/video/1102083691?background=1&muted=1" 
-              class="w-full h-72" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
-    </div>
-  </div>
+  </div><!-- cierre del contenedor central -->
 
   <script>
     lucide.createIcons();
