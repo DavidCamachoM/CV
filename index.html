@@ -5,114 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Santiago Camacho Mora - Portafolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #262626);
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2a2a2a);
       color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .card {
-      background: linear-gradient(145deg, #141414, #1f1f1f);
-      border: 1px solid #ff7f11;
+      background: linear-gradient(145deg, #1c1c1c, #262626);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      position: relative;
     }
     .accent {
       color: #ff7f11;
     }
-    .btn {
-      background: linear-gradient(to right, #ff7f11, #ff3c00);
+    .overlay {
+      position: relative;
+      cursor: pointer;
+      border-radius: 1rem;
+      overflow: hidden;
     }
-    .btn:hover {
-      background: linear-gradient(to right, #ff3c00, #ff7f11);
+    .overlay img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: blur(6px) brightness(0.6);
+      transition: all 0.4s;
     }
-    .border-accent {
-      border-color: #ff7f11;
+    .overlay::before {
+      content: "Click";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      background: rgba(0,0,0,0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .overlay iframe {
+      display: none;
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 1rem;
+    }
+    .overlay.active img,
+    .overlay.active::before {
+      display: none;
+    }
+    .overlay.active iframe {
+      display: block;
     }
   </style>
 </head>
-<body class="font-sans">
-  <!-- Contenedor principal -->
-  <div class="max-w-4xl mx-auto my-10 card shadow-2xl rounded-2xl overflow-hidden p-1">
-    <!-- Página 1 -->
-    <section id="page1" class="p-10">
-      <div class="flex flex-col items-center text-center">
-        <img src="https://via.placeholder.com/150" alt="Foto" class="rounded-full w-36 h-36 mb-4 border-4 border-accent">
-        <h1 class="text-3xl font-bold">David Santiago Camacho Mora</h1>
-        <p class="accent font-semibold">Editor de video | Creador de contenido | Apasionado por el VFX y 3D</p>
-        <p class="mt-2 text-gray-300">📍 Chía, Colombia</p>
-        <div class="flex gap-5 mt-4">
-          <a href="mailto:david.camacho200424@gmail.com" class="accent hover:underline">Email</a>
-          <a href="tel:+573208968558" class="accent hover:underline">Teléfono</a>
-          <a href="https://instagram.com/feuer.art" target="_blank" class="accent hover:underline">Instagram</a>
-        </div>
-      </div>
+<body>
+  <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      <!-- Educación -->
-      <div class="mt-10">
-        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Educación</h2>
-        <ul class="mt-4 space-y-2 text-gray-300">
-          <li><strong>Ingeniería Multimedia</strong> – Universidad Militar Nueva Granada (2021 – Presente)</li>
-          <li><strong>Curso de Fotografía Básica</strong> – Casa de la Cultura Chía (2025 – Presente)</li>
-          <li><strong>Curso de Dibujo Digital</strong> – Escuela Gaticolor (2023)</li>
-          <li><strong>Bachillerato Técnico en Artes Plásticas</strong> – IED Cerca de Piedra (2016 – 2020)</li>
-        </ul>
-      </div>
+    <!-- Hero -->
+    <div class="lg:col-span-2 card text-center flex flex-col items-center">
+      <i class="fas fa-paperclip absolute top-4 right-6 text-gray-400 rotate-12 text-xl"></i>
+      <img src="https://via.placeholder.com/180" alt="Foto" class="rounded-full w-40 h-40 mb-4 border-4 border-[#ff7f11]">
+      <h1 class="text-3xl font-bold">David Santiago Camacho Mora</h1>
+      <p class="accent font-semibold">Editor de video | Creador de contenido | Apasionado por el VFX y 3D</p>
+      <p class="mt-2 text-gray-300">📍 Chía, Colombia</p>
+    </div>
 
-      <!-- Skills -->
-      <div class="mt-10">
-        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Herramientas</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4 text-gray-300">
-          <span>Premiere Pro</span>
-          <span>After Effects</span>
-          <span>DaVinci Resolve</span>
-          <span>Blender</span>
-          <span>Photoshop</span>
-          <span>Illustrator</span>
-        </div>
-      </div>
+    <!-- About Me -->
+    <div class="card">
+      <h2 class="text-xl font-bold mb-3 accent">Sobre mí</h2>
+      <p><strong>Edad:</strong> 23</p>
+      <p><strong>Altura:</strong> 1.75m</p>
+      <p><strong>Idiomas:</strong> Español / Inglés</p>
+    </div>
 
-      <!-- Idiomas -->
-      <div class="mt-10">
-        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Idiomas</h2>
-        <div class="mt-4">
-          <p>Español – ⭐⭐⭐⭐⭐</p>
-          <p>Inglés – ⭐⭐⭐⭐⭐</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-10">
-        <button onclick="document.getElementById('page1').classList.add('hidden');document.getElementById('page2').classList.remove('hidden');" class="btn px-6 py-2 text-white font-semibold rounded-xl shadow transition">Next Page ➝</button>
-      </div>
-    </section>
-
-    <!-- Página 2 -->
-    <section id="page2" class="p-10 hidden">
-      <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Experiencia</h2>
-      <ul class="mt-4 space-y-4 text-gray-300">
-        <li>
-          <strong class="accent">Editor de video y gestor de redes sociales – Sapiens Research</strong> (Ene 2025 – Presente, Remoto)
-          <p>Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
-        </li>
-        <li>
-          <strong class="accent">Editor de videos freelance</strong> (Ene 2022 – Presente, Remoto)
-          <p>Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
-        </li>
-        <li>
-          <strong class="accent">Creador de contenido – Instagram y TikTok</strong> (2024 – Presente)
-          <p>Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
-        </li>
+    <!-- Educación -->
+    <div class="lg:col-span-2 card">
+      <h2 class="text-xl font-bold mb-3 accent">Educación</h2>
+      <ul class="space-y-3">
+        <li><strong>Ingeniería Multimedia</strong> – Universidad Militar Nueva Granada (2021 – Presente)</li>
+        <li><strong>Curso de Fotografía Básica</strong> – Casa de la Cultura Chía (2025 – Presente)</li>
+        <li><strong>Curso de Dibujo Digital</strong> – Escuela Gaticolor (2023)</li>
+        <li><strong>Bachillerato Técnico en Artes Plásticas</strong> – IED Cerca de Piedra (2016 – 2020)</li>
       </ul>
+    </div>
 
-      <!-- Contacto -->
-      <div class="mt-10">
-        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Contacto</h2>
-        <p class="mt-4 text-gray-300">📧 david.camacho200424@gmail.com</p>
-        <p class="text-gray-300">📱 +57 320 896 8558</p>
-        <p class="text-gray-300">📷 <a href="https://instagram.com/feuer.art" target="_blank" class="accent hover:underline">instagram.com/feuer.art</a></p>
-      </div>
+    <!-- Información / Contacto -->
+    <div class="card">
+      <h2 class="text-xl font-bold mb-3 accent">Contacto</h2>
+      <p><i class="fas fa-envelope accent"></i> david.camacho200424@gmail.com</p>
+      <p><i class="fas fa-phone accent"></i> +57 320 896 8558</p>
+      <p><i class="fab fa-instagram accent"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="hover:underline">@feuer.art</a></p>
+    </div>
 
-      <div class="text-center mt-10">
-        <button onclick="document.getElementById('page2').classList.add('hidden');document.getElementById('page1').classList.remove('hidden');" class="btn px-6 py-2 text-white font-semibold rounded-xl shadow transition">⬅ Back</button>
+    <!-- Skills -->
+    <div class="lg:col-span-2 card">
+      <h2 class="text-xl font-bold mb-3 accent">Herramientas</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-6 gap-6 text-center">
+        <div><i class="fa-solid fa-video text-3xl accent"></i><p>Premiere</p></div>
+        <div><i class="fa-solid fa-wand-magic-sparkles text-3xl accent"></i><p>After Effects</p></div>
+        <div><i class="fa-solid fa-film text-3xl accent"></i><p>DaVinci</p></div>
+        <div><i class="fa-solid fa-cube text-3xl accent"></i><p>Blender</p></div>
+        <div><i class="fa-solid fa-image text-3xl accent"></i><p>Photoshop</p></div>
+        <div><i class="fa-solid fa-pen-nib text-3xl accent"></i><p>Illustrator</p></div>
       </div>
-    </section>
+    </div>
+
+    <!-- Intereses -->
+    <div class="card">
+      <h2 class="text-xl font-bold mb-3 accent">Intereses</h2>
+      <div class="flex justify-around text-3xl">
+        <div class="text-center"><i class="fas fa-palette accent"></i><p class="text-sm">Arte</p></div>
+        <div class="text-center"><i class="fas fa-gamepad accent"></i><p class="text-sm">Gaming</p></div>
+        <div class="text-center"><i class="fas fa-film accent"></i><p class="text-sm">Cine</p></div>
+      </div>
+    </div>
+
+    <!-- Idiomas -->
+    <div class="card">
+      <h2 class="text-xl font-bold mb-3 accent">Inglés</h2>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div><p>Speaking</p><p class="text-gray-400">Fair</p></div>
+        <div><p>Reading</p><p class="text-gray-400">Good</p></div>
+        <div><p>Writing</p><p class="text-gray-400">Fair</p></div>
+      </div>
+    </div>
+
+    <!-- Experiencia -->
+    <div class="lg:col-span-3 card">
+      <h2 class="text-xl font-bold mb-3 accent">Experiencia</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="accent font-bold">Editor de video y gestor de redes sociales – Sapiens Research</h3>
+          <p class="text-sm text-gray-400">Ene 2025 – Presente | Remoto</p>
+          <p>Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
+        </div>
+        <div>
+          <h3 class="accent font-bold">Editor de videos freelance</h3>
+          <p class="text-sm text-gray-400">Ene 2022 – Presente | Remoto</p>
+          <p>Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
+        </div>
+        <div>
+          <h3 class="accent font-bold">Creador de contenido – Instagram y TikTok</h3>
+          <p class="text-sm text-gray-400">2024 – Presente</p>
+          <p>Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Showreel -->
+    <div class="lg:col-span-3 card">
+      <h2 class="text-xl font-bold mb-3 accent">Showreel</h2>
+      <div class="overlay" onclick="this.classList.add('active'); this.querySelector('iframe').src += '?autoplay=1';">
+        <img src="https://i.vimeocdn.com/video/662162906-640x360.jpg" alt="Preview">
+        <iframe src="https://player.vimeo.com/video/1102083691" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
