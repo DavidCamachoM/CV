@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Santiago Camacho Mora - Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #262626);
+      color: #f5f5f5;
+    }
+    .card {
+      background: linear-gradient(145deg, #141414, #1f1f1f);
+      border: 1px solid #ff7f11;
+    }
+    .accent {
+      color: #ff7f11;
+    }
+    .btn {
+      background: linear-gradient(to right, #ff7f11, #ff3c00);
+    }
+    .btn:hover {
+      background: linear-gradient(to right, #ff3c00, #ff7f11);
+    }
+    .border-accent {
+      border-color: #ff7f11;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Contenedor principal -->
+  <div class="max-w-4xl mx-auto my-10 card shadow-2xl rounded-2xl overflow-hidden p-1">
+    <!-- Página 1 -->
+    <section id="page1" class="p-10">
+      <div class="flex flex-col items-center text-center">
+        <img src="https://via.placeholder.com/150" alt="Foto" class="rounded-full w-36 h-36 mb-4 border-4 border-accent">
+        <h1 class="text-3xl font-bold">David Santiago Camacho Mora</h1>
+        <p class="accent font-semibold">Editor de video | Creador de contenido | Apasionado por el VFX y 3D</p>
+        <p class="mt-2 text-gray-300">📍 Chía, Colombia</p>
+        <div class="flex gap-5 mt-4">
+          <a href="mailto:david.camacho200424@gmail.com" class="accent hover:underline">Email</a>
+          <a href="tel:+573208968558" class="accent hover:underline">Teléfono</a>
+          <a href="https://instagram.com/feuer.art" target="_blank" class="accent hover:underline">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Educación -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Educación</h2>
+        <ul class="mt-4 space-y-2 text-gray-300">
+          <li><strong>Ingeniería Multimedia</strong> – Universidad Militar Nueva Granada (2021 – Presente)</li>
+          <li><strong>Curso de Fotografía Básica</strong> – Casa de la Cultura Chía (2025 – Presente)</li>
+          <li><strong>Curso de Dibujo Digital</strong> – Escuela Gaticolor (2023)</li>
+          <li><strong>Bachillerato Técnico en Artes Plásticas</strong> – IED Cerca de Piedra (2016 – 2020)</li>
+        </ul>
+      </div>
+
+      <!-- Skills -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Herramientas</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4 text-gray-300">
+          <span>Premiere Pro</span>
+          <span>After Effects</span>
+          <span>DaVinci Resolve</span>
+          <span>Blender</span>
+          <span>Photoshop</span>
+          <span>Illustrator</span>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Idiomas</h2>
+        <div class="mt-4">
+          <p>Español – ⭐⭐⭐⭐⭐</p>
+          <p>Inglés – ⭐⭐⭐⭐⭐</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <button onclick="document.getElementById('page1').classList.add('hidden');document.getElementById('page2').classList.remove('hidden');" class="btn px-6 py-2 text-white font-semibold rounded-xl shadow transition">Next Page ➝</button>
+      </div>
+    </section>
+
+    <!-- Página 2 -->
+    <section id="page2" class="p-10 hidden">
+      <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Experiencia</h2>
+      <ul class="mt-4 space-y-4 text-gray-300">
+        <li>
+          <strong class="accent">Editor de video y gestor de redes sociales – Sapiens Research</strong> (Ene 2025 – Presente, Remoto)
+          <p>Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
+        </li>
+        <li>
+          <strong class="accent">Editor de videos freelance</strong> (Ene 2022 – Presente, Remoto)
+          <p>Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
+        </li>
+        <li>
+          <strong class="accent">Creador de contenido – Instagram y TikTok</strong> (2024 – Presente)
+          <p>Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
+        </li>
+      </ul>
+
+      <!-- Contacto -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold border-b-2 border-accent inline-block">Contacto</h2>
+        <p class="mt-4 text-gray-300">📧 david.camacho200424@gmail.com</p>
+        <p class="text-gray-300">📱 +57 320 896 8558</p>
+        <p class="text-gray-300">📷 <a href="https://instagram.com/feuer.art" target="_blank" class="accent hover:underline">instagram.com/feuer.art</a></p>
+      </div>
+
+      <div class="text-center mt-10">
+        <button onclick="document.getElementById('page2').classList.add('hidden');document.getElementById('page1').classList.remove('hidden');" class="btn px-6 py-2 text-white font-semibold rounded-xl shadow transition">⬅ Back</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
