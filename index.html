@@ -1,213 +1,408 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - David Santiago Camacho Mora</title>
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
-      color: #f5f5f5;
-    }
-    .card {
-      background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
-      border-radius: 20px;
-      box-shadow: 6px 6px 15px rgba(0,0,0,0.6),
-                  -4px -4px 12px rgba(60,60,60,0.2);
-      padding: 20px;
-    }
-    .highlight {
-      background: linear-gradient(90deg,#ff6600,#ff8533);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .video-overlay {
-      position:absolute;inset:0;
-      display:flex;justify-content:center;align-items:center;
-      backdrop-filter:blur(12px);
-      background:rgba(0,0,0,0.5);
-      font-size:1.5rem;font-weight:600;
-      cursor:pointer;transition:.3s;
-    }
-    .video-overlay:hover {background:rgba(0,0,0,0.7);}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - David Santiago Camacho Mora</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Estilos CSS generados a partir de Tailwind */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
+      color: #f5f5f5;
+      padding: 32px; /* p-8 */
+    }
+    .container {
+      max-width: 80rem; /* max-w-5xl */
+      margin-left: auto; /* mx-auto */
+      margin-right: auto; /* mx-auto */
+      display: flex;
+      flex-direction: column;
+      gap: 32px; /* space-y-8 */
+    }
+    
+    /* NEUMORFISMO BASE */
+    .card {
+      background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+      border-radius: 20px;
+      box-shadow: 6px 6px 15px rgba(0,0,0,0.6),
+                  -4px -4px 12px rgba(60,60,60,0.2);
+      padding: 20px;
+    }
+    .highlight {
+      background: linear-gradient(90deg,#ff6600,#ff8533);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* GRID GENERAL */
+    .grid-header {
+      display: grid;
+      gap: 24px; /* gap-6 */
+      align-items: flex-start; /* items-start */
+    }
+    @media (min-width: 768px) { /* md:grid-cols-3 */
+      .grid-header {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .card-info {
+        grid-column: span 2 / span 2; /* md:col-span-2 */
+      }
+    }
+
+    /* CARD PERFIL */
+    .card-profile {
+      display: flex; /* flex */
+      flex-direction: column; /* flex-col */
+      align-items: center; /* items-center */
+      text-align: center; /* text-center */
+    }
+    .profile-img-container {
+      position: relative; /* relative */
+    }
+    .profile-img {
+      width: 160px; /* w-40 */
+      height: 160px; /* h-40 */
+      border-radius: 9999px; /* rounded-full */
+      object-fit: cover; /* object-cover */
+      border: 4px solid #f97316; /* border-4 border-orange-500 */
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    }
+    .icon-clip {
+      position: absolute; /* absolute */
+      top: -12px; /* -top-3 */
+      right: -12px; /* -right-3 */
+      color: #fb923c; /* text-orange-400 */
+    }
+    .profile-name {
+      margin-top: 16px; /* mt-4 */
+      font-size: 1.5rem; /* text-2xl */
+      font-weight: 800; /* font-extrabold */
+    }
+    .profile-title {
+      font-size: 1.125rem; /* text-lg */
+      font-weight: 600; /* font-semibold */
+    }
+    .profile-location {
+      color: #d1d5db; /* text-gray-300 */
+    }
+
+    /* SOBRE MÍ */
+    .section-title {
+      font-size: 1.25rem; /* text-xl */
+      font-weight: 700; /* font-bold */
+      margin-bottom: 12px; /* mb-3 */
+    }
+    .about-text {
+      color: #d1d5db; /* text-gray-300 */
+      line-height: 1.625; /* leading-relaxed */
+    }
+    .stats-grid {
+      display: grid; /* grid */
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid-cols-2 */
+      gap: 16px; /* gap-4 */
+      margin-top: 24px; /* mt-6 */
+    }
+    .stat-item {
+      background-color: #1f2937; /* bg-gray-800 */
+      padding: 16px; /* p-4 */
+      border-radius: 0.75rem; /* rounded-xl */
+      display: flex; /* flex */
+      flex-direction: column; /* flex-col */
+      align-items: center; /* items-center */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+    }
+    .stat-icon {
+      color: #f97316; /* text-orange-500 */
+      width: 24px; /* w-6 */
+      height: 24px; /* h-6 */
+      margin-bottom: 4px; /* mb-1 */
+    }
+    .stat-label {
+      font-size: 0.875rem; /* text-sm */
+      color: #9ca3af; /* text-gray-400 */
+    }
+    .stat-value {
+      font-size: 1.125rem; /* text-lg */
+      font-weight: 700; /* font-bold */
+    }
+
+    /* EDUCACIÓN Y CONTACTO */
+    .grid-education-contact {
+      display: grid;
+      gap: 24px; /* gap-6 */
+    }
+    @media (min-width: 768px) { /* md:grid-cols-3 */
+      .grid-education-contact {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .card-education {
+        grid-column: span 2 / span 2; /* md:col-span-2 */
+      }
+    }
+    .education-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px; /* space-y-3 */
+      color: #d1d5db; /* text-gray-300 */
+    }
+
+    /* CONTACTO */
+    .contact-item {
+      display: flex; /* flex */
+      align-items: center; /* items-center */
+      gap: 8px; /* gap-2 */
+    }
+    .contact-item:not(:last-child) {
+        margin-bottom: 8px; /* Espacio entre items */
+    }
+    .contact-link {
+      color: inherit;
+      text-decoration: none;
+    }
+    .contact-link:hover {
+      text-decoration: underline; /* hover:underline */
+    }
+
+    /* EXPERIENCIA */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px; /* space-y-6 */
+      color: #d1d5db; /* text-gray-300 */
+    }
+    .experience-item-title {
+      display: flex;
+      align-items: center;
+      gap: 8px; /* gap-2 */
+      font-weight: 600; /* font-semibold */
+    }
+    .experience-icon {
+      color: #f97316; /* text-orange-500 */
+    }
+    .experience-date {
+      font-size: 0.875rem; /* text-sm */
+      color: #9ca3af; /* text-gray-400 */
+    }
+    .experience-description {
+      margin-top: 4px; /* mt-1 */
+    }
+
+    /* SHOWREEL */
+    .showreel-container {
+      position: relative; /* relative */
+      max-width: 48rem; /* max-w-3xl */
+      margin-left: auto; /* mx-auto */
+      margin-right: auto; /* mx-auto */
+      border-radius: 0.75rem; /* rounded-xl */
+      overflow: hidden; /* overflow-hidden */
+    }
+    .showreel-iframe {
+      width: 100%; /* w-full */
+      height: 288px; /* h-72 */
+    }
+    .video-overlay {
+      position:absolute;
+      inset:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.5);
+      font-size:1.5rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
+    }
+    .video-overlay:hover {background:rgba(0,0,0,0.7);}
+
+    /* TRABAJOS RECIENTES */
+    .trabajos-recientes {
+      margin-top: 40px;
+    }
+    .trabajos-recientes .titulo {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg,#ff6600,#ff8533);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/16;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 2px solid #333;
+      transition: .3s;
+    }
+    .video-wrapper:hover {
+      transform: scale(1.03);
+      border-color: #ff6600;
+    }
+    .ig-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
-<body class="p-8">
 
-  <!-- CONTENEDOR CENTRAL -->
-  <div class="max-w-5xl mx-auto space-y-8">
+<body>
 
-    <!-- HEADER -->
-    <div class="grid md:grid-cols-3 gap-6 items-start">
-      <!-- Foto -->
-      <div class="card flex flex-col items-center text-center">
-        <div class="relative">
-<img 
-  src="foto.jpg" 
-  alt="Foto de perfil de David Santiago Camacho Mora"
-  class="w-40 h-40 rounded-full object-cover border-4 border-orange-500 shadow-xl"
-/>
+  <div class="container">
 
-          <div class="absolute -top-3 -right-3 text-orange-400"><i data-lucide="paperclip"></i></div>
-        </div>
-        <h1 class="mt-4 text-2xl font-extrabold">David Santiago Camacho Mora</h1>
-        <p class="highlight text-lg font-semibold">Editor de video | Creador de contenido | VFX & 3D</p>
-        <p class="text-gray-300">📍 Chía, Colombia</p>
-      </div>
+    <div class="grid-header">
+      <div class="card card-profile">
+        <div class="profile-img-container">
+          <img src="foto.jpg" class="profile-img">
+          <div class="icon-clip"><i data-lucide="paperclip"></i></div>
+        </div>
+        <h1 class="profile-name">David Santiago Camacho Mora</h1>
+        <p class="highlight profile-title">Editor de video | Creador de contenido | VFX & 3D</p>
+        <p class="profile-location">📍 Chía, Colombia</p>
+      </div>
 
-      <!-- Sobre mí -->
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-3">Sobre mí</h2>
-        <p class="text-gray-300 leading-relaxed">
-Soy un creador audiovisual con pasión por transformar ideas en experiencias visuales. Mi enfoque combina la edición de video, el modelado 3D y el diseño digital para dar vida a narrativas dinámicas y proyectos con identidad propia. Tengo experiencia en branding visual, generación de contenido digital para redes sociales y proyectos multimedia que conectan tanto con audiencias como con marcas.
+      <div class="card card-info">
+        <h2 class="section-title highlight">Sobre mí</h2>
+        <p class="about-text">
+          Soy un creador audiovisual con pasión por transformar ideas en experiencias visuales. Mi enfoque combina la edición de video, el modelado 3D y el diseño digital para dar vida a narrativas dinámicas y proyectos con identidad propia. Tengo experiencia en branding visual, generación de contenido digital para redes sociales y proyectos multimedia que conectan tanto con audiencias como con marcas.
 Me defino como una persona persistente, curiosa y en constante aprendizaje: siempre busco experimentar con nuevas herramientas, explorar tendencias y llevar cada proyecto un paso más allá de lo convencional.
-        </p>
-        <!-- Mini cards -->
-        <div class="grid grid-cols-2 gap-4 mt-6">
-          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
-            <i data-lucide="user" class="text-orange-500 w-6 h-6 mb-1"></i>
-            <p class="text-sm text-gray-400">Edad</p>
-            <p class="text-lg font-bold">21</p>
-          </div>
-          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
-            <i data-lucide="ruler" class="text-orange-500 w-6 h-6 mb-1"></i>
-            <p class="text-sm text-gray-400">Altura</p>
-            <p class="text-lg font-bold">1.69m</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        </p>
 
-    <!-- EDUCACIÓN + CONTACTO -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-3">Educación</h2>
-        <ul class="space-y-3 text-gray-300">
-          <li>🎓 <b>Ingeniería Multimedia</b> – UMNG (2021 – Presente)</li>
-          <li>📷 <b>Fotografía Básica</b> – Casa de la Cultura Chía (2025 – Presente)</li>
-          <li>✏️ <b>Dibujo Digital</b> – Escuela Gaticolor (2023)</li>
-          <li>🎨 <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra (2016 – 2020)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2 class="text-xl font-bold highlight mb-3">Contacto</h2>
-        <p class="flex items-center gap-2"><i data-lucide="mail"></i> david.camacho200424@gmail.com</p>
-        <p class="flex items-center gap-2"><i data-lucide="phone"></i> +57 320 896 8558</p>
-        <p class="flex items-center gap-2"><i data-lucide="instagram"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="hover:underline">@feuer.art</a></p>
-      </div>
-    </div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <i data-lucide="user" class="stat-icon"></i>
+            <p class="stat-label">Edad</p>
+            <p class="stat-value">21</p>
+          </div>
+          <div class="stat-item">
+            <i data-lucide="ruler" class="stat-icon"></i>
+            <p class="stat-label">Altura</p>
+            <p class="stat-value">1.69m</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- EXPERIENCIA -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4">Experiencia</h2>
-      <div class="space-y-6 text-gray-300">
-        <div>
-          <p class="flex items-center gap-2 font-semibold"><i data-lucide="briefcase" class="text-orange-500"></i> Editor de video y gestor de redes – <span class="highlight">Sapiens Research</span></p>
-          <p class="text-sm text-gray-400">Ene 2025 – Presente | Remoto</p>
-          <p class="mt-1">Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
-        </div>
-        <div>
-          <p class="flex items-center gap-2 font-semibold"><i data-lucide="scissors" class="text-orange-500"></i> Editor de videos freelance</p>
-          <p class="text-sm text-gray-400">Ene 2022 – Presente | Remoto</p>
-          <p class="mt-1">Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
-        </div>
-        <div>
-          <p class="flex items-center gap-2 font-semibold"><i data-lucide="clapperboard" class="text-orange-500"></i> Creador de contenido – Instagram & TikTok</p>
-          <p class="text-sm text-gray-400">2024 – Presente</p>
-          <p class="mt-1">Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
-        </div>
-      </div>
-    </div>
+    <div class="grid-education-contact">
+      <div class="card card-education">
+        <h2 class="section-title highlight">Educación</h2>
+        <ul class="education-list">
+          <li>🎓 <b>Ingeniería Multimedia</b> – UMNG (2021 – Presente)</li>
+          <li>📷 <b>Fotografía Básica</b> – Casa de la Cultura Chía (2025 – Presente)</li>
+          <li>✏️ <b>Dibujo Digital</b> – Escuela Gaticolor (2023)</li>
+          <li>🎨 <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra (2016 – 2020)</li>
+        </ul>
+      </div>
 
-    <!-- HERRAMIENTAS + INTERESES -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-4">Herramientas</h2>
-        <div class="space-y-4">
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Premiere Pro</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[90%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="wand-2" class="text-orange-500"></i> After Effects</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="video" class="text-orange-500"></i> DaVinci Resolve</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[70%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="circle-slashed" class="text-orange-500"></i> Blender</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="image" class="text-orange-500"></i> Photoshop</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[75%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="pencil-ruler" class="text-orange-500"></i> Illustrator</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-          </div>
-        </div>
-      </div>
+      <div class="card card-contact">
+        <h2 class="section-title highlight">Contacto</h2>
+        <p class="contact-item"><i data-lucide="mail"></i> david.camacho200424@gmail.com</p>
+        <p class="contact-item"><i data-lucide="phone"></i> +57 320 896 8558</p>
+        <p class="contact-item"><i data-lucide="instagram"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="contact-link">@feuer.art</a></p>
+      </div>
+    </div>
 
-      <div class="card">
-        <h2 class="text-xl font-bold highlight mb-4">Intereses</h2>
-        <div class="space-y-2 text-gray-300">
-          <p class="flex items-center gap-2"><i data-lucide="palette" class="text-orange-500"></i> Arte</p>
-          <p class="flex items-center gap-2"><i data-lucide="gamepad-2" class="text-orange-500"></i> Gaming</p>
-          <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Cine</p>
-        </div>
-      </div>
-    </div>
+    <div class="card">
+      <h2 class="section-title highlight">Experiencia</h2>
+      <div class="experience-list">
 
-    <!-- IDIOMAS -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4">Ingles</h2>
-      <div class="grid md:grid-cols-3 gap-6 text-gray-300">
-        <div>
-          <p class="font-semibold">Speaking</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[40%]"></div></div>
-        </div>
-        <div>
-          <p class="font-semibold">Reading</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-        </div>
-        <div>
-          <p class="font-semibold">Writing</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[50%]"></div></div>
-        </div>
-      </div>
-    </div>
+        <div>
+          <p class="experience-item-title">
+            <i data-lucide="glasses" class="experience-icon"></i>
+            Editor & filmmaker – <span class="highlight">Praga Design</span>
+          </p>
+          <p class="experience-date">Oct 2025 – Presente</p>
+          <p class="experience-description">Editor y creador audiovisual en Praga Design, especializado en crear contenido dinámico para redes, aftermovies y piezas comerciales. Enfoque en una estética moderna, ritmo visual y una edición precisa que resalte la identidad de cada proyecto.</p>
+        </div>
 
-    <!-- SHOWREEL -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4 text-center">Showreel</h2>
-      <div class="relative max-w-3xl mx-auto rounded-xl overflow-hidden">
-        <iframe id="showreel" src="https://player.vimeo.com/video/1102083691?background=1&muted=1" 
-                class="w-full h-72" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
-      </div>
-    </div>
+        <div>
+          <p class="experience-item-title"><i data-lucide="briefcase" class="experience-icon"></i> Editor de video y gestor de redes – <span class="highlight">Sapiens Research</span></p>
+          <p class="experience-date">Ene 2025 – Presente | Remoto</p>
+          <p class="experience-description">Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
+        </div>
+        <div>
+          <p class="experience-item-title"><i data-lucide="scissors" class="experience-icon"></i> Editor de videos freelance</p>
+          <p class="experience-date">Ene 2022 – Presente | Remoto</p>
+          <p class="experience-description">Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
+        </div>
+        <div>
+          <p class="experience-item-title"><i data-lucide="clapperboard" class="experience-icon"></i> Creador de contenido – Instagram & TikTok</p>
+          <p class="experience-date">2024 – Presente</p>
+          <p class="experience-description">Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
+        </div>
 
-  </div><!-- cierre del contenedor central -->
+      </div>
+    </div>
 
-  <script>
-    lucide.createIcons();
-    function playVideo(){
-      const iframe=document.getElementById("showreel");
-      iframe.src="https://player.vimeo.com/video/1102083691?autoplay=1";
-      document.querySelector(".video-overlay").style.display="none";
-    }
-  </script>
+    <div class="card">
+      <h2 class="section-title highlight" style="text-align: center; margin-bottom: 16px;">Showreel</h2>
+
+      <div class="showreel-container">
+        <iframe id="showreel"
+          src="https://player.vimeo.com/video/1102083691?background=1&muted=1"
+          class="showreel-iframe" frameborder="0" allow="autoplay; fullscreen"></iframe>
+
+        <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
+      </div>
+    </div>
+
+    <div class="card trabajos-recientes">
+      <h2 class="titulo">Trabajos Recientes</h2>
+
+      <div class="videos-grid">
+
+        <a href="https://www.instagram.com/p/DQXzg9MDd_e" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video1.mp4" type="video/mp4">
+          </video>
+        </a>
+
+        <a href="https://www.instagram.com/p/DQzKC2MgEBF" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video2.mp4" type="video/mp4">
+          </video>
+        </a>
+
+        <a href="https://www.instagram.com/p/DObkHohD8Sn" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video3.mp4" type="video/mp4">
+          </video>
+        </a>
+
+        <a href="https://www.instagram.com/p/DLn1aMUspJD" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video4.mp4" type="video/mp4">
+          </video>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+    function playVideo(){
+      const iframe = document.getElementById("showreel");
+      // Al hacer click, elimina los parámetros de background y muted, y agrega autoplay=1
+      iframe.src = "https://player.vimeo.com/video/1102083691?autoplay=1";
+      document.querySelector(".video-overlay").style.display="none";
+    }
+  </script>
 
 </body>
 </html>
