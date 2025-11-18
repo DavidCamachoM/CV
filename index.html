@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - David Santiago Camacho Mora</title>
+  
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -30,32 +33,68 @@
       -webkit-text-fill-color: transparent;
     }
     .video-overlay {
-      position:absolute;inset:0;
-      display:flex;justify-content:center;align-items:center;
+      position:absolute;
+      inset:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       backdrop-filter:blur(12px);
       background:rgba(0,0,0,0.5);
-      font-size:1.5rem;font-weight:600;
-      cursor:pointer;transition:.3s;
+      font-size:1.5rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
     }
     .video-overlay:hover {background:rgba(0,0,0,0.7);}
+
+    /* ------- TRABAJOS RECIENTES -------- */
+    .trabajos-recientes {
+      margin-top: 40px;
+    }
+    .trabajos-recientes .titulo {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg,#ff6600,#ff8533);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/16;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 2px solid #333;
+      transition: .3s;
+    }
+    .video-wrapper:hover {
+      transform: scale(1.03);
+      border-color: #ff6600;
+    }
+    .ig-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
+
 <body class="p-8">
 
-  <!-- CONTENEDOR CENTRAL -->
   <div class="max-w-5xl mx-auto space-y-8">
 
     <!-- HEADER -->
     <div class="grid md:grid-cols-3 gap-6 items-start">
-      <!-- Foto -->
       <div class="card flex flex-col items-center text-center">
         <div class="relative">
-<img 
-  src="foto.jpg" 
-  alt="Foto de perfil de David Santiago Camacho Mora"
-  class="w-40 h-40 rounded-full object-cover border-4 border-orange-500 shadow-xl"
-/>
-
+          <img src="foto.jpg" class="w-40 h-40 rounded-full object-cover border-4 border-orange-500 shadow-xl">
           <div class="absolute -top-3 -right-3 text-orange-400"><i data-lucide="paperclip"></i></div>
         </div>
         <h1 class="mt-4 text-2xl font-extrabold">David Santiago Camacho Mora</h1>
@@ -67,10 +106,10 @@
       <div class="card md:col-span-2">
         <h2 class="text-xl font-bold highlight mb-3">Sobre mí</h2>
         <p class="text-gray-300 leading-relaxed">
-Soy un creador audiovisual con pasión por transformar ideas en experiencias visuales. Mi enfoque combina la edición de video, el modelado 3D y el diseño digital para dar vida a narrativas dinámicas y proyectos con identidad propia. Tengo experiencia en branding visual, generación de contenido digital para redes sociales y proyectos multimedia que conectan tanto con audiencias como con marcas.
+         Soy un creador audiovisual con pasión por transformar ideas en experiencias visuales. Mi enfoque combina la edición de video, el modelado 3D y el diseño digital para dar vida a narrativas dinámicas y proyectos con identidad propia. Tengo experiencia en branding visual, generación de contenido digital para redes sociales y proyectos multimedia que conectan tanto con audiencias como con marcas.
 Me defino como una persona persistente, curiosa y en constante aprendizaje: siempre busco experimentar con nuevas herramientas, explorar tendencias y llevar cada proyecto un paso más allá de lo convencional.
         </p>
-        <!-- Mini cards -->
+
         <div class="grid grid-cols-2 gap-4 mt-6">
           <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
             <i data-lucide="user" class="text-orange-500 w-6 h-6 mb-1"></i>
@@ -97,6 +136,7 @@ Me defino como una persona persistente, curiosa y en constante aprendizaje: siem
           <li>🎨 <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra (2016 – 2020)</li>
         </ul>
       </div>
+
       <div class="card">
         <h2 class="text-xl font-bold highlight mb-3">Contacto</h2>
         <p class="flex items-center gap-2"><i data-lucide="mail"></i> david.camacho200424@gmail.com</p>
@@ -109,6 +149,16 @@ Me defino como una persona persistente, curiosa y en constante aprendizaje: siem
     <div class="card">
       <h2 class="text-xl font-bold highlight mb-4">Experiencia</h2>
       <div class="space-y-6 text-gray-300">
+
+        <div>
+          <p class="flex items-center gap-2 font-semibold">
+            <i data-lucide="glasses" class="text-orange-500"></i>
+            Editor & filmmaker – <span class="highlight">Praga Design</span>
+          </p>
+          <p class="text-sm text-gray-400">Oct 2025 – Presente</p>
+          <p class="mt-1">Editor y creador audiovisual en Praga Design, especializado en crear contenido dinámico para redes, aftermovies y piezas comerciales. Enfoque en una estética moderna, ritmo visual y una edición precisa que resalte la identidad de cada proyecto.</p>
+        </div>
+
         <div>
           <p class="flex items-center gap-2 font-semibold"><i data-lucide="briefcase" class="text-orange-500"></i> Editor de video y gestor de redes – <span class="highlight">Sapiens Research</span></p>
           <p class="text-sm text-gray-400">Ene 2025 – Presente | Remoto</p>
@@ -124,92 +174,66 @@ Me defino como una persona persistente, curiosa y en constante aprendizaje: siem
           <p class="text-sm text-gray-400">2024 – Presente</p>
           <p class="mt-1">Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
         </div>
-      </div>
-    </div>
 
-    <!-- HERRAMIENTAS + INTERESES -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-4">Herramientas</h2>
-        <div class="space-y-4">
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Premiere Pro</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[90%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="wand-2" class="text-orange-500"></i> After Effects</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="video" class="text-orange-500"></i> DaVinci Resolve</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[70%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="circle-slashed" class="text-orange-500"></i> Blender</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="image" class="text-orange-500"></i> Photoshop</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[75%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="pencil-ruler" class="text-orange-500"></i> Illustrator</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 class="text-xl font-bold highlight mb-4">Intereses</h2>
-        <div class="space-y-2 text-gray-300">
-          <p class="flex items-center gap-2"><i data-lucide="palette" class="text-orange-500"></i> Arte</p>
-          <p class="flex items-center gap-2"><i data-lucide="gamepad-2" class="text-orange-500"></i> Gaming</p>
-          <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Cine</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- IDIOMAS -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4">Ingles</h2>
-      <div class="grid md:grid-cols-3 gap-6 text-gray-300">
-        <div>
-          <p class="font-semibold">Speaking</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[40%]"></div></div>
-        </div>
-        <div>
-          <p class="font-semibold">Reading</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-        </div>
-        <div>
-          <p class="font-semibold">Writing</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[50%]"></div></div>
-        </div>
       </div>
     </div>
 
     <!-- SHOWREEL -->
     <div class="card">
       <h2 class="text-xl font-bold highlight mb-4 text-center">Showreel</h2>
+
       <div class="relative max-w-3xl mx-auto rounded-xl overflow-hidden">
-        <iframe id="showreel" src="https://player.vimeo.com/video/1102083691?background=1&muted=1" 
-                class="w-full h-72" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe id="showreel"
+          src="https://player.vimeo.com/video/1102083691?background=1&muted=1"
+          class="w-full h-72" frameborder="0" allow="autoplay; fullscreen"></iframe>
+
         <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
       </div>
     </div>
 
-  </div><!-- cierre del contenedor central -->
+    <!-- TRABAJOS RECIENTES -->
+    <div class="card trabajos-recientes">
+      <h2 class="titulo">Trabajos Recientes</h2>
+
+      <div class="videos-grid">
+
+        <a href="https://www.instagram.com/p/DQXzg9MDd_e" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video1.mp4" type="video/mp4">
+          </video>
+        </a>
+
+        <a href="https://www.instagram.com/p/DQzKC2MgEBF" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video2.mp4" type="video/mp4">
+          </video>
+        </a>
+
+        <a href="https://www.instagram.com/p/DObkHohD8Sn" target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video3.mp4" type="video/mp4">
+          </video>
+        </a>
+
+        <a href="https://www.instagram.com/p/DLn1aMUspJD    " target="_blank" class="video-wrapper">
+          <video class="ig-video" autoplay muted loop playsinline>
+            <source src="videos/video4.mp4" type="video/mp4">
+          </video>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
 
   <script>
     lucide.createIcons();
     function playVideo(){
-      const iframe=document.getElementById("showreel");
-      iframe.src="https://player.vimeo.com/video/1102083691?autoplay=1";
+      const iframe = document.getElementById("showreel");
+      iframe.src = "https://player.vimeo.com/video/1102083691?autoplay=1";
       document.querySelector(".video-overlay").style.display="none";
     }
   </script>
 
 </body>
 </html>
-
-
