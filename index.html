@@ -1,215 +1,311 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - David Santiago Camacho Mora</title>
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
-      color: #f5f5f5;
-    }
-    .card {
-      background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
-      border-radius: 20px;
-      box-shadow: 6px 6px 15px rgba(0,0,0,0.6),
-                  -4px -4px 12px rgba(60,60,60,0.2);
-      padding: 20px;
-    }
-    .highlight {
-      background: linear-gradient(90deg,#ff6600,#ff8533);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .video-overlay {
-      position:absolute;inset:0;
-      display:flex;justify-content:center;align-items:center;
-      backdrop-filter:blur(12px);
-      background:rgba(0,0,0,0.5);
-      font-size:1.5rem;font-weight:600;
-      cursor:pointer;transition:.3s;
-    }
-    .video-overlay:hover {background:rgba(0,0,0,0.7);}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio | David Santiago Camacho Mora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Paleta y Diseño Base (Neumorfismo Oscuro) */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #101010, #000000);
+      color: #e0e0e0;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 24px;
+      box-shadow: 8px 8px 20px rgba(0,0,0,0.8),
+                  -8px -8px 20px rgba(45,45,45,0.2);
+      padding: 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.8),
+                  -4px -4px 10px rgba(45,45,45,0.2);
+      transform: translateY(-2px);
+    }
+    .highlight {
+      background: linear-gradient(90deg, #ff6600, #ff8533);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Estilo para íconos de herramientas (ej. Adobe, Blender) */
+    .tool-icon {
+      font-weight: 800;
+      width: 1.5rem; height: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 6px;
+      color: white;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+    .pp-icon { background-color: #9900ff; } /* Premiere Pro */
+    .ae-icon { background-color: #ff00ff; } /* After Effects */
+    .dr-icon { background-color: #4a4a4a; } /* DaVinci Resolve */
+    .bl-icon { background-color: #f75204; } /* Blender */
+    .ps-icon { background-color: #0080ff; } /* Photoshop */
+    .ai-icon { background-color: #ff9a00; } /* Illustrator */
+    /* Overlay para video/proyectos */
+    .video-overlay {
+      position:absolute;inset:0;
+      display:flex;justify-content:center;align-items:center;
+      backdrop-filter:blur(8px);
+      background:rgba(0,0,0,0.6);
+      font-size:1.5rem;font-weight:700;
+      cursor:pointer;transition:.3s;
+      border-radius: inherit;
+    }
+    .video-overlay:hover {background:rgba(0,0,0,0.8);}
+  </style>
 </head>
-<body class="p-8">
+<body class="p-6 sm:p-8">
 
-  <!-- CONTENEDOR CENTRAL -->
-  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="max-w-6xl mx-auto space-y-8">
 
-    <!-- HEADER -->
-    <div class="grid md:grid-cols-3 gap-6 items-start">
-      <!-- Foto -->
-      <div class="card flex flex-col items-center text-center">
-        <div class="relative">
-<img 
-  src="foto.jpg" 
-  alt="Foto de perfil de David Santiago Camacho Mora"
-  class="w-40 h-40 rounded-full object-cover border-4 border-orange-500 shadow-xl"
-/>
+        <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+            <div class="card flex flex-col items-center text-center">
+        <div class="relative mb-4">
+          <img 
+            src="foto.jpg" 
+            alt="Foto de perfil de David Santiago Camacho Mora"
+            class="w-44 h-44 rounded-full object-cover border-4 border-orange-500 shadow-2xl"
+          />
+          <div class="absolute -top-3 -right-3 text-orange-400 p-2 bg-gray-900 rounded-full"><i data-lucide="paperclip" class="w-5 h-5"></i></div>
+        </div>
+        <h1 class="text-3xl font-extrabold text-white">David Santiago Camacho Mora</h1>
+        <p class="highlight text-xl font-bold mt-1">Editor de Video | Creador de Contenido Multimedia</p>
+        <p class="text-gray-400 mt-2 flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Chía, Colombia</p>
+      </div>
 
-          <div class="absolute -top-3 -right-3 text-orange-400"><i data-lucide="paperclip"></i></div>
-        </div>
-        <h1 class="mt-4 text-2xl font-extrabold">David Santiago Camacho Mora</h1>
-        <p class="highlight text-lg font-semibold">Editor de video | Creador de contenido | VFX & 3D</p>
-        <p class="text-gray-300">📍 Chía, Colombia</p>
-      </div>
+            <div class="card lg:col-span-2 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold highlight mb-3">Acerca de Mí 💡</h2>
+          <p class="text-gray-300 leading-relaxed text-base">
+            Soy un creador audiovisual con pasión por transformar ideas en **experiencias visuales de alto impacto**. Mi enfoque combina la **edición de video, el modelado 3D y el diseño digital** para dar vida a narrativas dinámicas y proyectos con identidad propia. Experiencia en branding visual, generación de contenido digital para redes sociales y proyectos multimedia que conectan con audiencias y marcas.
+            Me defino como una persona **persistente, curiosa** y en constante aprendizaje: siempre busco experimentar con nuevas herramientas, explorar tendencias y llevar cada proyecto un paso más allá de lo convencional.
+          </p>
+        </div>
+                <div class="grid grid-cols-2 gap-4 mt-6">
+          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
+            <i data-lucide="user" class="text-orange-500 w-6 h-6 mb-1"></i>
+            <p class="text-sm text-gray-400">Edad</p>
+            <p class="text-lg font-bold">21 años</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
+            <i data-lucide="graduation-cap" class="text-orange-500 w-6 h-6 mb-1"></i>
+            <p class="text-sm text-gray-400">Estado</p>
+            <p class="text-lg font-bold">Estudiante UMNG</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <!-- Sobre mí -->
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-3">Sobre mí</h2>
-        <p class="text-gray-300 leading-relaxed">
-Soy un creador audiovisual con pasión por transformar ideas en experiencias visuales. Mi enfoque combina la edición de video, el modelado 3D y el diseño digital para dar vida a narrativas dinámicas y proyectos con identidad propia. Tengo experiencia en branding visual, generación de contenido digital para redes sociales y proyectos multimedia que conectan tanto con audiencias como con marcas.
-Me defino como una persona persistente, curiosa y en constante aprendizaje: siempre busco experimentar con nuevas herramientas, explorar tendencias y llevar cada proyecto un paso más allá de lo convencional.
-        </p>
-        <!-- Mini cards -->
-        <div class="grid grid-cols-2 gap-4 mt-6">
-          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
-            <i data-lucide="user" class="text-orange-500 w-6 h-6 mb-1"></i>
-            <p class="text-sm text-gray-400">Edad</p>
-            <p class="text-lg font-bold">21</p>
-          </div>
-          <div class="bg-gray-800 p-4 rounded-xl flex flex-col items-center shadow-md">
-            <i data-lucide="ruler" class="text-orange-500 w-6 h-6 mb-1"></i>
-            <p class="text-sm text-gray-400">Altura</p>
-            <p class="text-lg font-bold">1.69m</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <hr class="border-gray-800">
 
-    <!-- EDUCACIÓN + CONTACTO -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-3">Educación</h2>
-        <ul class="space-y-3 text-gray-300">
-          <li>🎓 <b>Ingeniería Multimedia</b> – UMNG (2021 – Presente)</li>
-          <li>📷 <b>Fotografía Básica</b> – Casa de la Cultura Chía (2025 – Presente)</li>
-          <li>✏️ <b>Dibujo Digital</b> – Escuela Gaticolor (2023)</li>
-          <li>🎨 <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra (2016 – 2020)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2 class="text-xl font-bold highlight mb-3">Contacto</h2>
-        <p class="flex items-center gap-2"><i data-lucide="mail"></i> david.camacho200424@gmail.com</p>
-        <p class="flex items-center gap-2"><i data-lucide="phone"></i> +57 320 896 8558</p>
-        <p class="flex items-center gap-2"><i data-lucide="instagram"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="hover:underline">@feuer.art</a></p>
-      </div>
-    </div>
+        <div class="grid lg:grid-cols-3 gap-6">
 
-    <!-- EXPERIENCIA -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4">Experiencia</h2>
-      <div class="space-y-6 text-gray-300">
-        <div>
-          <p class="flex items-center gap-2 font-semibold"><i data-lucide="briefcase" class="text-orange-500"></i> Editor de video y gestor de redes – <span class="highlight">Sapiens Research</span></p>
-          <p class="text-sm text-gray-400">Ene 2025 – Presente | Remoto</p>
-          <p class="mt-1">Edición de videos educativos e institucionales, coordinación de contenido en redes sociales, After Effects, Premiere, DaVinci Resolve.</p>
-        </div>
-        <div>
-          <p class="flex items-center gap-2 font-semibold"><i data-lucide="scissors" class="text-orange-500"></i> Editor de videos freelance</p>
-          <p class="text-sm text-gray-400">Ene 2022 – Presente | Remoto</p>
-          <p class="mt-1">Edición de contenido para YouTube, reels, TikTok, shorts, transiciones dinámicas y uso de IA en procesos creativos.</p>
-        </div>
-        <div>
-          <p class="flex items-center gap-2 font-semibold"><i data-lucide="clapperboard" class="text-orange-500"></i> Creador de contenido – Instagram & TikTok</p>
-          <p class="text-sm text-gray-400">2024 – Presente</p>
-          <p class="mt-1">Desarrollo de reels, branding visual, edición estética y optimización de contenidos para algoritmos.</p>
-        </div>
-      </div>
-    </div>
+            <div class="space-y-6">
+                <div class="card">
+          <h2 class="text-2xl font-bold highlight mb-3">Contacto 📞</h2>
+          <div class="space-y-2 text-gray-300">
+            <p class="flex items-center gap-2"><i data-lucide="mail" class="w-5 h-5 text-orange-400"></i> david.camacho200424@gmail.com</p>
+            <p class="flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5 text-orange-400"></i> +57 320 896 8558</p>
+            <p class="flex items-center gap-2"><i data-lucide="instagram" class="w-5 h-5 text-orange-400"></i> <a href="https://instagram.com/feuer.art" target="_blank" class="hover:underline hover:text-orange-400 transition">@feuer.art</a></p>
+          </div>
+        </div>
 
-    <!-- HERRAMIENTAS + INTERESES -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card md:col-span-2">
-        <h2 class="text-xl font-bold highlight mb-4">Herramientas</h2>
-        <div class="space-y-4">
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Premiere Pro</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[90%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="wand-2" class="text-orange-500"></i> After Effects</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="video" class="text-orange-500"></i> DaVinci Resolve</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[70%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="circle-slashed" class="text-orange-500"></i> Blender</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="image" class="text-orange-500"></i> Photoshop</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[75%]"></div></div>
-          </div>
-          <div>
-            <p class="flex items-center gap-2"><i data-lucide="pencil-ruler" class="text-orange-500"></i> Illustrator</p>
-            <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
-          </div>
-        </div>
-      </div>
+                <div class="card">
+          <h2 class="text-2xl font-bold highlight mb-3">Formación Académica 📚</h2>
+          <ul class="space-y-4 text-gray-300">
+            <li class="relative pl-6">
+              <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-orange-500"></div>
+              <b>Ingeniería Multimedia</b> – UMNG <br>
+              <span class="text-sm text-gray-400">(2021 – Presente)</span>
+            </li>
+            <li class="relative pl-6">
+              <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-orange-500"></div>
+              <b>Fotografía Básica</b> – Casa de la Cultura Chía <br>
+              <span class="text-sm text-gray-400">(2025 – Presente)</span>
+            </li>
+            <li class="relative pl-6">
+              <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-orange-500"></div>
+              <b>Bachillerato en Artes Plásticas</b> – IED Cerca de Piedra <br>
+              <span class="text-sm text-gray-400">(2016 – 2020)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-      <div class="card">
-        <h2 class="text-xl font-bold highlight mb-4">Intereses</h2>
-        <div class="space-y-2 text-gray-300">
-          <p class="flex items-center gap-2"><i data-lucide="palette" class="text-orange-500"></i> Arte</p>
-          <p class="flex items-center gap-2"><i data-lucide="gamepad-2" class="text-orange-500"></i> Gaming</p>
-          <p class="flex items-center gap-2"><i data-lucide="clapperboard" class="text-orange-500"></i> Cine</p>
-        </div>
-      </div>
-    </div>
+            <div class="lg:col-span-2 space-y-6">
+                <div class="card">
+          <h2 class="text-2xl font-bold highlight mb-4">Experiencia Laboral 💼</h2>
+          <div class="space-y-6 text-gray-300">
+            <div class="border-l-4 border-orange-500 pl-4">
+              <p class="font-semibold text-white text-lg">Editor de video y gestor de redes</p>
+              <p class="highlight text-sm font-medium">Sapiens Research</p>
+              <p class="text-xs text-gray-400 mt-0.5">Ene 2025 – Presente | Remoto</p>
+              <ul class="list-disc ml-5 text-sm mt-1 space-y-1">
+                <li>Edición de videos educativos e institucionales de alto nivel.</li>
+                <li>Coordinación de contenido en redes sociales y estrategia de difusión.</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-gray-600 pl-4">
+              <p class="font-semibold text-white text-lg">Editor de videos freelance</p>
+              <p class="text-gray-400 text-sm font-medium">Proyectos Independientes</p>
+              <p class="text-xs text-gray-400 mt-0.5">Ene 2022 – Presente | Remoto</p>
+              <ul class="list-disc ml-5 text-sm mt-1 space-y-1">
+                <li>Edición de contenido para YouTube, reels, TikTok y shorts.</li>
+                <li>Implementación de transiciones dinámicas y uso de IA en procesos creativos.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <!-- IDIOMAS -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4">Ingles</h2>
-      <div class="grid md:grid-cols-3 gap-6 text-gray-300">
-        <div>
-          <p class="font-semibold">Speaking</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[40%]"></div></div>
-        </div>
-        <div>
-          <p class="font-semibold">Reading</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
-        </div>
-        <div>
-          <p class="font-semibold">Writing</p>
-          <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[50%]"></div></div>
-        </div>
-      </div>
-    </div>
+                <div class="card">
+          <h2 class="text-2xl font-bold highlight mb-4">Herramientas & Software 🛠️</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-3">
+              <div>
+                <p class="flex items-center gap-2 font-medium"><div class="tool-icon pp-icon">Pr</div> Premiere Pro</p>
+                <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[90%]"></div></div>
+              </div>
+              <div>
+                <p class="flex items-center gap-2 font-medium"><div class="tool-icon ae-icon">Ae</div> After Effects</p>
+                <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
+              </div>
+              <div>
+                <p class="flex items-center gap-2 font-medium"><div class="tool-icon ps-icon">Ps</div> Photoshop</p>
+                <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[75%]"></div></div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <p class="flex items-center gap-2 font-medium"><div class="tool-icon dr-icon">Dv</div> DaVinci Resolve</p>
+                <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[70%]"></div></div>
+              </div>
+              <div>
+                <p class="flex items-center gap-2 font-medium"><div class="tool-icon bl-icon">Bl</div> Blender (3D/VFX)</p>
+                <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
+              </div>
+              <div>
+                <p class="flex items-center gap-2 font-medium"><div class="tool-icon ai-icon">Ai</div> Illustrator</p>
+                <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[65%]"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- SHOWREEL -->
-    <div class="card">
-      <h2 class="text-xl font-bold highlight mb-4 text-center">Showreel</h2>
-      <div class="relative max-w-3xl mx-auto rounded-xl overflow-hidden">
-        <iframe id="showreel" src="https://player.vimeo.com/video/1102083691?background=1&muted=1" 
-                class="w-full h-72" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
-      </div>
-    </div>
+    <hr class="border-gray-800">
 
-  </div><!-- cierre del contenedor central -->
+        <div class="card">
+      <h2 class="text-2xl font-bold highlight mb-6 text-center">Proyectos Destacados (Instagram) ✨</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://www.instagram.com/p/DQzKC2MgB_F" target="_blank" class="block">
+          <div class="relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-300 group">
+                        <img src="https://picsum.photos/400/500?random=1" alt="Miniatura de proyecto 1" class="w-full h-72 object-cover rounded-xl group-hover:opacity-75 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/70 transition duration-300">
+              <i data-lucide="instagram" class="w-8 h-8 text-orange-400"></i>
+            </div>
+            <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black/80 to-transparent w-full">
+              <p class="text-sm font-semibold text-white">Visual Art & VFX</p>
+            </div>
+          </div>
+        </a>
 
-  <script>
-    lucide.createIcons();
-    function playVideo(){
-      const iframe=document.getElementById("showreel");
-      iframe.src="https://player.vimeo.com/video/1102083691?autoplay=1";
-      document.querySelector(".video-overlay").style.display="none";
-    }
-  </script>
+                <a href="https://www.instagram.com/p/DQXzg9MDd_e" target="_blank" class="block">
+          <div class="relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-300 group">
+            <img src="https://picsum.photos/400/500?random=2" alt="Miniatura de proyecto 2" class="w-full h-72 object-cover rounded-xl group-hover:opacity-75 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/70 transition duration-300">
+              <i data-lucide="instagram" class="w-8 h-8 text-orange-400"></i>
+            </div>
+            <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black/80 to-transparent w-full">
+              <p class="text-sm font-semibold text-white">Motion Graphics</p>
+            </div>
+          </div>
+        </a>
+
+                <a href="https://www.instagram.com/p/DObkHohD8Sn" target="_blank" class="block">
+          <div class="relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-300 group">
+            <img src="https://picsum.photos/400/500?random=3" alt="Miniatura de proyecto 3" class="w-full h-72 object-cover rounded-xl group-hover:opacity-75 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/70 transition duration-300">
+              <i data-lucide="instagram" class="w-8 h-8 text-orange-400"></i>
+            </div>
+            <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black/80 to-transparent w-full">
+              <p class="text-sm font-semibold text-white">Edición Rítmica</p>
+            </div>
+          </div>
+        </a>
+
+                <a href="https://www.instagram.com/p/DLn1aMUspJD" target="_blank" class="block">
+          <div class="relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-300 group">
+            <img src="https://picsum.photos/400/500?random=4" alt="Miniatura de proyecto 4" class="w-full h-72 object-cover rounded-xl group-hover:opacity-75 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/70 transition duration-300">
+              <i data-lucide="instagram" class="w-8 h-8 text-orange-400"></i>
+            </div>
+            <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black/80 to-transparent w-full">
+              <p class="text-sm font-semibold text-white">Diseño 3D (Blender)</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <hr class="border-gray-800">
+
+        <div class="grid lg:grid-cols-3 gap-6">
+
+            <div class="card lg:col-span-2">
+        <h2 class="text-2xl font-bold highlight mb-4 text-center">🎥 Showreel Audiovisual</h2>
+        <div class="relative max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
+          <iframe id="showreel" src="https://player.vimeo.com/video/1102083691?background=1&muted=1" 
+                  class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div class="video-overlay" onclick="playVideo()">▶ Click para reproducir</div>
+        </div>
+      </div>
+
+            <div class="space-y-6">
+                <div class="card">
+          <h2 class="text-2xl font-bold highlight mb-4">Inglés 🌐</h2>
+          <div class="space-y-3 text-gray-300">
+            <div>
+              <p class="font-medium flex justify-between">Speaking <span class="text-orange-400">B1</span></p>
+              <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[40%]"></div></div>
+            </div>
+            <div>
+              <p class="font-medium flex justify-between">Reading <span class="text-orange-400">C1</span></p>
+              <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[80%]"></div></div>
+            </div>
+            <div>
+              <p class="font-medium flex justify-between">Writing <span class="text-orange-400">B2</span></p>
+              <div class="h-2 bg-gray-700 rounded-full mt-1"><div class="h-2 bg-orange-500 rounded-full w-[50%]"></div></div>
+            </div>
+          </div>
+        </div>
+        
+                <div class="card">
+          <h2 class="text-2xl font-bold highlight mb-4">Intereses 🌟</h2>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-orange-600/20 text-orange-400 py-1 px-3 rounded-full text-sm font-medium flex items-center gap-1"><i data-lucide="palette" class="w-4 h-4"></i> Arte Digital</span>
+            <span class="bg-orange-600/20 text-orange-400 py-1 px-3 rounded-full text-sm font-medium flex items-center gap-1"><i data-lucide="gamepad-2" class="w-4 h-4"></i> Gaming & Stream</span>
+            <span class="bg-orange-600/20 text-orange-400 py-1 px-3 rounded-full text-sm font-medium flex items-center gap-1"><i data-lucide="clapperboard" class="w-4 h-4"></i> VFX & Cine</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>    <script>
+    lucide.createIcons();
+    function playVideo(){
+      const iframe=document.getElementById("showreel");
+      iframe.src="https://player.vimeo.com/video/1102083691?autoplay=1";
+      document.querySelector(".video-overlay").style.display="none";
+    }
+  </script>
 
 </body>
 </html>
-
-
-
