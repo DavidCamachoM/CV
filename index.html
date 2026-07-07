@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Santiago Camacho Mora - Portfolio Elite</title>
+    <title>David Santiago Camacho Mora — Editor Audiovisual & Motion Designer</title>
+    <meta name="description" content="Portafolio de David Santiago Camacho Mora, creador audiovisual especializado en edición de video, motion graphics, VFX y modelado 3D. Con sede en Chía, Colombia.">
+    <meta name="author" content="David Santiago Camacho Mora">
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="David Santiago Camacho Mora — Editor Audiovisual & Motion Designer">
+    <meta property="og:description" content="Portafolio de edición de video, motion graphics, VFX y modelado 3D.">
+    <meta property="og:image" content="images/og-preview.jpg">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="David Santiago Camacho Mora — Editor Audiovisual & Motion Designer">
+    <meta name="twitter:description" content="Portafolio de edición de video, motion graphics, VFX y modelado 3D.">
+    <meta name="twitter:image" content="images/og-preview.jpg">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -305,6 +322,7 @@
         
         /* [Resto de estilos se mantienen igual] */
         .text-highlight { color: var(--color-accent); font-weight: 500; }
+        .text-muted { color: var(--color-text-muted); }
         .btn-primary { 
             display: inline-flex; align-items: center; gap: 0.8rem; background-color: var(--color-accent); 
             color: var(--color-bg-primary); padding: 1rem 2.5rem; border-radius: 4px; font-weight: 700; 
@@ -314,6 +332,14 @@
         .btn-primary:hover { 
             background-color: var(--color-text-light); color: var(--color-bg-primary); 
             box-shadow: 0 8px 20px rgba(224,224,224,0.3); transform: translateY(-3px); 
+        }
+        a.btn-primary:focus-visible,
+        .nav-point:focus-visible,
+        .stack-item:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 3px;
         }
         .profile-image { 
             border: 4px solid var(--color-accent); box-shadow: var(--shadow-accent); 
@@ -390,6 +416,7 @@
         }
         .work-video { 
             width: 100%; height: 100%; object-fit: cover; display: block; 
+            background-color: var(--color-bg-primary);
         }
         .work-info-overlay { 
             position: absolute; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); 
@@ -416,6 +443,192 @@
             color: var(--color-text-light); margin-bottom: 1.5rem; 
         }
 
+        /* --- Menú móvil (hamburguesa) --- */
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--border-subtle);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--color-accent);
+        }
+        .mobile-nav-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(13,13,13,0.97);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .mobile-nav-menu.active {
+            display: flex;
+        }
+        .mobile-nav-menu a {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: var(--color-text-light);
+            text-decoration: none;
+        }
+        .mobile-nav-menu a:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- Filtros de categoría en Proyectos --- */
+        .project-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .filter-btn {
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-muted);
+            border: 1px solid var(--border-subtle);
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-text-light);
+        }
+        .filter-btn.active {
+            background-color: var(--color-accent);
+            color: var(--color-bg-primary);
+            border-color: var(--color-accent);
+        }
+        .work-item.filtered-out {
+            display: none;
+        }
+
+        /* --- Proyecto Destacado --- */
+        .featured-project {
+            background-color: var(--color-bg-primary);
+            border: 1px solid var(--color-accent);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-accent);
+        }
+        .featured-project-label {
+            padding: 1rem 2rem 0;
+        }
+        .featured-project-label span {
+            color: var(--color-accent);
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.25rem;
+            border: 1px solid var(--color-accent);
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+        }
+        .featured-video-wrap {
+            position: relative;
+            aspect-ratio: 9/16;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .featured-video-wrap .work-video {
+            object-fit: cover;
+        }
+        .featured-play-btn {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            color: var(--color-bg-primary);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .featured-play-btn:hover {
+            transform: scale(1.1);
+        }
+        .featured-project-content {
+            padding: 2rem;
+        }
+        .featured-project-content h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: var(--color-text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        /* --- Lightbox de video --- */
+        .video-lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 1100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .video-lightbox-overlay.active {
+            display: flex;
+        }
+        .video-lightbox-content {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+        .video-lightbox-content video {
+            width: 100%;
+            border-radius: 10px;
+            max-height: 80vh;
+            background: #000;
+        }
+        .video-lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            cursor: pointer;
+        }
+        .video-lightbox-external {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            text-decoration: underline;
+        }
+
+        /* --- Subgalería dentro de Photography --- */
+        .photo-subgallery-heading {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin: 3rem 0 0.5rem;
+        }
+
         /* Media Queries para responsividad */
         @media (max-width: 768px) {
             .hero-title {
@@ -433,11 +646,28 @@
             #nav-hud {
                 display: none;
             }
+            /* Ocultar cursor personalizado en móvil/táctil */
+            .custom-cursor {
+                display: none;
+            }
+            .mobile-nav-toggle {
+                display: flex;
+            }
             .process-separator {
                 display: none; /* Ocultar el separador en móvil */
             }
             .process-steps-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Respeta la preferencia de movimiento reducido del usuario */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
         
@@ -529,13 +759,13 @@
 </head>
 
 <body>
-    <div class="contact-modal-overlay" id="contactModal">
+    <div class="contact-modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
         <div class="contact-modal-content">
-            <button class="modal-close-btn" onclick="closeContactModal()"><i data-lucide="x" class="w-6 h-6"></i></button>
-            <h3 class="sub-heading text-center !mb-6">ELIGE TU MÉTODO DE CONTACTO</h3>
+            <button class="modal-close-btn" onclick="closeContactModal()" aria-label="Cerrar modal de contacto"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <h3 class="sub-heading text-center !mb-6" id="contactModalTitle">ELIGE TU MÉTODO DE CONTACTO</h3>
             
             <div class="space-y-4">
-                <a href="https://www.instagram.com/feuer.art" target="_blank" class="contact-option-btn instagram" onclick="closeContactModal()">
+                <a href="https://www.instagram.com/feuer.art" target="_blank" rel="noopener noreferrer" class="contact-option-btn instagram" onclick="closeContactModal()">
                     <i data-lucide="instagram" class="w-6 h-6"></i> PERFIL INSTAGRAM
                 </a>
 
@@ -545,19 +775,42 @@
             </div>
         </div>
     </div>
+    <div class="video-lightbox-overlay" id="videoLightbox" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+        <div class="video-lightbox-content">
+            <button class="video-lightbox-close" onclick="closeVideoLightbox()" aria-label="Cerrar video"><i data-lucide="x" class="w-8 h-8"></i></button>
+            <video id="lightboxVideo" controls autoplay playsinline></video>
+            <a href="#" id="lightboxExternalLink" target="_blank" rel="noopener noreferrer" class="video-lightbox-external">Ver publicación original →</a>
+        </div>
+    </div>
+
     <div class="custom-cursor"></div>
     
     <div class="page-background" id="parallax-bg"></div>
 
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+
+    <nav class="mobile-nav-menu" id="mobileNavMenu">
+        <a href="#perfil" class="mobile-nav-link">01 · PERFIL</a>
+        <a href="#trayectoria" class="mobile-nav-link">02 · TRAYECTORIA</a>
+        <a href="#showreel-section" class="mobile-nav-link">03 · DEMO REEL</a>
+        <a href="#proyectos" class="mobile-nav-link">04 · PROYECTOS</a>
+        <a href="#metodologia" class="mobile-nav-link">05 · METODOLOGÍA</a>
+        <a href="#codebase" class="mobile-nav-link">06 · CODE</a>
+        <a href="#stack" class="mobile-nav-link">07 · STACK</a>
+        <a href="#photography" class="mobile-nav-link">08 · FOTOGRAFÍA</a>
+    </nav>
+
     <nav class="fixed right-0 top-1/2 -translate-y-1/2 z-50 mr-6 hidden md:block" id="nav-hud">
-        <a href="#perfil" class="nav-point active" data-target="01"></a>
-        <a href="#trayectoria" class="nav-point" data-target="02"></a>
-        <a href="#showreel-section" class="nav-point" data-target="03"></a>
-        <a href="#proyectos" class="nav-point" data-target="04"></a>
-        <a href="#metodologia" class="nav-point" data-target="05"></a> 
-        <a href="#codebase" class="nav-point" data-target="06"></a> 
-        <a href="#stack" class="nav-point" data-target="07"></a> 
-        <a href="#photography" class="nav-point" data-target="08"></a>
+        <a href="#perfil" class="nav-point active" data-target="01" aria-label="Ir a Perfil"></a>
+        <a href="#trayectoria" class="nav-point" data-target="02" aria-label="Ir a Trayectoria"></a>
+        <a href="#showreel-section" class="nav-point" data-target="03" aria-label="Ir a Demo Reel"></a>
+        <a href="#proyectos" class="nav-point" data-target="04" aria-label="Ir a Proyectos"></a>
+        <a href="#metodologia" class="nav-point" data-target="05" aria-label="Ir a Metodología"></a> 
+        <a href="#codebase" class="nav-point" data-target="06" aria-label="Ir a Programación"></a> 
+        <a href="#stack" class="nav-point" data-target="07" aria-label="Ir a Software y Toolkit"></a> 
+        <a href="#photography" class="nav-point" data-target="08" aria-label="Ir a Fotografía"></a>
     </nav>
     
     <div class="container-fluid">
@@ -573,7 +826,7 @@
                 </h1>
             </div>
             <div id="header-intro-3" class="opacity-0 translate-y-10">
-                <p class="text-2xl text-color-text-muted max-w-4xl mb-10 leading-relaxed font-light">
+                <p class="text-2xl text-muted max-w-4xl mb-10 leading-relaxed font-light">
                     Creador audiovisual con enfasis en post-producción, (VFX) y construcción de identidades visuales para marcas y narrativas digitales. Transformo ideas en experiencias cinematográficas.
                 </p>
             </div>
@@ -588,12 +841,12 @@
             <h2 class="section-heading"><span>[01]</span> VISUAL ARTIST PROFILE</h2>
             <div class="grid md:grid-cols-3 gap-12 profile-grid-layout">
                 <div class="flex flex-col items-center">
-                    <img src="foto.jpg" alt="David Santiago Camacho Mora Profile" class="profile-image w-44 h-44 rounded-full object-cover mb-6">
-                    <p class="text-color-text-muted text-center text-lg mb-4">Chía, Colombia | 21 Años</p>
+                    <img src="foto.jpg" alt="Retrato de David Santiago Camacho Mora" width="176" height="176" class="profile-image w-44 h-44 rounded-full object-cover mb-6">
+                    <p class="text-muted text-center text-lg mb-4">Chía, Colombia</p>
                     <div class="flex gap-6 mt-4">
-                        <a href="https://instagram.com/feuer.art" target="_blank" class="text-highlight hover:text-color-text-light transition"><i data-lucide="instagram" class="w-7 h-7"></i></a>
-                        <a href="#" target="_blank" class="text-highlight hover:text-color-text-light transition"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
-                        <a href="mailto:david.camacho200424@gmail.com" class="text-highlight hover:text-color-text-light transition"><i data-lucide="mail" class="w-7 h-7"></i></a>
+                        <a href="https://instagram.com/feuer.art" target="_blank" rel="noopener noreferrer" class="text-highlight hover:text-color-text-light transition" aria-label="Instagram de David Camacho"><i data-lucide="instagram" class="w-7 h-7"></i></a>
+                        <a href="https://www.linkedin.com/in/TU-USUARIO-AQUI" target="_blank" rel="noopener noreferrer" class="text-highlight hover:text-color-text-light transition" aria-label="LinkedIn de David Camacho"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+                        <a href="mailto:david.camacho200424@gmail.com" class="text-highlight hover:text-color-text-light transition" aria-label="Enviar correo a David Camacho"><i data-lucide="mail" class="w-7 h-7"></i></a>
                     </div>
                 </div>
 
@@ -601,7 +854,7 @@
                     <p class="text-lg text-color-text-light mb-6">
                         Soy un <span class="text-highlight">arquitecto audiovisual</span> con una pasión por esculpir narrativas visuales impactantes. Mi experiencia abarca desde la edición cinematográfica hasta el diseño de movimiento complejo y la creación de entornos 3D, siempre con un enfoque en la coherencia estética y la efectividad comunicativa.
                     </p>
-                    <p class="text-color-text-muted mb-8">
+                    <p class="text-muted mb-8">
                         Me distingo por mi habilidad para fusionar la creatividad artística con la eficiencia técnica, utilizando herramientas de vanguardia y experimentando con <span class="text-highlight">nuevas tecnologías como la IA</span> para optimizar flujos de trabajo y generar resultados innovadores.
                     </p>
                     <h3 class="sub-heading mb-4">Competencias Clave</h3>
@@ -666,16 +919,17 @@
         <section class="section-panel !p-0 overflow-hidden" data-gsap-reveal id="showreel-section">
             <div class="px-16 pt-12 pb-8">
                 <h2 class="section-heading !mb-0"><span>[03]</span> DEMO REEL</h2>
-                <p class="text-color-text-muted text-lg">Una compilación de mis trabajos más representativos en edición de video y modelado.</p>
+                <p class="text-muted text-lg">Una compilación de mis trabajos más representativos en edición de video y modelado.</p>
             </div>
             
             <div class="showreel-frame">
                 <iframe id="showreel"
                     src="https://player.vimeo.com/video/1102083691?controls=0&dnt=1"
                     allow="autoplay; fullscreen; picture-in-picture"
-                    title="David Santiago Camacho Mora Showreel">
+                    title="David Santiago Camacho Mora Showreel"
+                    loading="lazy">
                 </iframe>
-                <div class="video-player-overlay" onclick="playShowreel()">
+                <div class="video-player-overlay" onclick="playShowreel()" role="button" tabindex="0" aria-label="Reproducir demo reel">
                     <span class="play-button">
                         <i data-lucide="play" class="w-8 h-8 fill-current"></i> START
                     </span>
@@ -685,93 +939,200 @@
 
         <section class="section-panel" data-gsap-reveal id="proyectos">
             <h2 class="section-heading"><span>[04]</span> RECENT PROJECTS / TRABAJOS</h2>
-            <p class="text-color-text-muted text-lg mb-8">Una selección de contenido de alto impacto generado para diversas plataformas y clientes.</p>
+            <p class="text-muted text-lg mb-8">Una selección de contenido de alto impacto generado para diversas plataformas y clientes.</p>
+
+            <!-- Proyecto destacado: cobertura completa de artista musical -->
+            <div class="featured-project">
+                  <!--  <div class="featured-project-label"><span>PROYECTO DESTACADO</span></div>-->
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="featured-video-wrap">
+                        <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Detrás de cámaras con la cantante">
+                            <source data-src="videos/BTS.mp4" type="video/mp4">
+                        </video>
+                        <button class="featured-play-btn" data-video-src="videos/BTS.mp4" aria-label="Reproducir detrás de cámaras">
+                            <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                        </button>
+                    </div>
+                    <div class="featured-video-wrap">
+                        <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Cobertura de concierto de la cantante">
+                            <source data-src="videos/CELOSA.mp4" type="video/mp4">
+                        </video>
+                        <button class="featured-play-btn" data-video-src="videos/CELOSA.mp4" aria-label="Reproducir cobertura de concierto">
+                            <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="featured-project-content">
+                    <h4>COBERTURA ARTISTA MUSICAL</h4>
+                    <p class="text-muted">
+                        Cobertura audiovisual completa para una cantante: detrás de cámaras del proceso creativo y una pieza de review/highlights de su concierto en vivo. Dos formatos, una misma narrativa de marca personal.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Filtros de categoría -->
+            <div class="project-filters" role="group" aria-label="Filtrar proyectos por categoría">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="eventos">Eventos</button>
+                <button class="filter-btn" data-filter="bienes-raices">Bienes Raíces</button>
+                <button class="filter-btn" data-filter="restaurantes">Restaurantes</button>
+                <button class="filter-btn" data-filter="corporativo">Corporativo</button>
+                <button class="filter-btn" data-filter="musica">Música</button>
+  
+            </div>
 
             <div class="work-gallery">
 
 
-                <a href = "https://www.tiktok.com/@daniel.chacon.arq/video/7618768821112900884?is_from_webapp=1&sender_device=pc&web_id=7506671001132942854" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video7.mp4" type="video/mp4"> 
+                                <!-- NUEVO: Restaurante — actualiza el link externo cuando lo publiques -->
+                <div class="work-item" data-category="restaurantes" data-video-src="videos/Tanaka/Producto.mp4" data-external="#">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel promocional de restaurante">
+                        <source data-src="videos/Tanaka/Producto.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-info-overlay">
+                        <h5>Reel Promocional: Restaurante</h5>
+                        <p>Diseño de Reels | Motion Graphics | Food Content</p>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="restaurantes" data-video-src="videos/Tanaka/NARUTO.mp4" data-external="https://www.instagram.com/reel/DaacPkFOXD3/">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel de ambiente de restaurante">
+                        <source data-src="videos/Tanaka/NARUTO.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-info-overlay">
+                        <h5>Reel: Restaurante</h5>
+                        <p>Edición Creativa | Color Grading | Trend</p>
+                    </div>
+                </div>
+                
+                <div class="work-item" data-category="restaurantes" data-video-src="videos/Tanaka/Promo.mp4" data-external="https://www.instagram.com/reel/DaTsCaUubIF/">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel de ambiente de restaurante">
+                        <source data-src="videos/Tanaka/Promo.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-info-overlay">
+                        <h5>Reel: Restaurante</h5>
+                        <p>Edición Creativa | Color Grading | Trend</p>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="restaurantes" data-video-src="videos/Tanaka/mundial.mp4" data-external="#">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel de ambiente de restaurante">
+                        <source data-src="videos/Tanaka/mundial.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-info-overlay">
+                        <h5>Reel: Restaurante</h5>
+                        <p>Edición Creativa | Color Grading | Trend</p>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="bienes-raices" data-video-src="videos/video7.mp4" data-external="https://www.tiktok.com/@daniel.chacon.arq/video/7618768821112900884?is_from_webapp=1&sender_device=pc&web_id=7506671001132942854">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel Daniel Chacon Arquitectura">
+                        <source data-src="videos/video7.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Daniel Chacon Arquitectura</h5>
                         <p>Diseño de Reels | Motion Graphics | Rotoscopy | IA </p>
                     </div>
-                </a>
+                </div>
                 
-                <a href = "https://www.tiktok.com/@daniel.chacon.arq/video/7606521747218779412?is_from_webapp=1&sender_device=pc&web_id=7506671001132942854" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video6.mp4" type="video/mp4"> 
+                <div class="work-item" data-category="bienes-raices" data-video-src="videos/video6.mp4" data-external="https://www.tiktok.com/@daniel.chacon.arq/video/7606521747218779412?is_from_webapp=1&sender_device=pc&web_id=7506671001132942854">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel Bienes raíces">
+                        <source data-src="videos/video6.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Reel Bienes raices</h5>
                         <p>Diseño de Reels | Motion Graphics | Rotoscopy | Photoshop</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://www.instagram.com/p/DS3oNs6gOj7/" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video5.mp4" type="video/mp4"> 
+                <div class="work-item" data-category="eventos" data-video-src="videos/video5.mp4" data-external="https://www.instagram.com/p/DS3oNs6gOj7/">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel promocional Praga Design">
+                        <source data-src="videos/video5.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Reel Promocional: "Praga Desing"</h5>
                         <p>Diseño de Reels | Motion Graphics | Rotoscopy</p>
                     </div>
-                </a>
+                </div>
                 
-                <a href="https://www.instagram.com/p/DQXzg9MDd_e" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video1.mp4" type="video/mp4"> 
+                <div class="work-item" data-category="eventos" data-video-src="videos/video1.mp4" data-external="https://www.instagram.com/p/DQXzg9MDd_e">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel promocional Praga Design">
+                        <source data-src="videos/video1.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Reel Promocional: "Praga Desing"</h5>
                         <p>Diseño de Reels | Motion Graphics</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://www.instagram.com/p/DQzKC2MgEBF" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video2.mp4" type="video/mp4"> 
+                <div class="work-item" data-category="eventos" data-video-src="videos/video2.mp4" data-external="https://www.instagram.com/p/DQzKC2MgEBF">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Contenido reel Praga Design">
+                        <source data-src="videos/video2.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Contenido (Reel): "Praga Desing"</h5>
                         <p>Edición Creativa | Fotografia</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://www.instagram.com/p/DObkHohD8Sn" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video3.mp4" type="video/mp4"> 
+                <div class="work-item" data-category="corporativo" data-video-src="videos/video3.mp4" data-external="https://www.instagram.com/p/DObkHohD8Sn">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel promocional Sapiens Research">
+                        <source data-src="videos/video3.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Reel Promocional: "Sapiens Research"</h5>
                         <p>Motion Graphics | Color Grading</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://www.instagram.com/p/DLn1aMUspJD" target="_blank" class="work-item">
-                    <video class="work-video" autoplay muted loop playsinline>
-                        <source src="videos/video4.mp4" type="video/mp4"> 
+                <div class="work-item" data-category="corporativo" data-video-src="videos/video4.mp4" data-external="https://www.instagram.com/p/DLn1aMUspJD">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Reel institucional Sapiens Research">
+                        <source data-src="videos/video4.mp4" type="video/mp4"> 
                     </video>
                     <div class="work-info-overlay">
                         <h5>Reel Institucional: "Sapiens Research"</h5>
                         <p>Edición | Post-producción</p>
                     </div>
-                </a>
+                </div>
+
+
+                <!-- NUEVO: Eventos/Fiestas — reemplaza la ruta del video y el link cuando lo tengas listo -->
+                <div class="work-item" data-category="musica" data-video-src="videos/BTS.mp4" data-external="https://www.instagram.com/p/DZxfeItuvmf/">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Cobertura de evento / fiesta">
+                        <source data-src="videos/BTS.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-info-overlay">
+                        <h5>BTS para sesion de fotos</h5>
+                        <p>Edición Dinámica | Highlights | 3D | Visual Effects</p>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="musica" data-video-src="videos/CELOSA.mp4" data-external="https://www.instagram.com/p/DaLT5PFuol9/">
+                    <video class="work-video lazy-video" muted loop playsinline preload="none" aria-label="Cobertura de evento / fiesta">
+                        <source data-src="videos/CELOSA.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-info-overlay">
+                        <h5>Cobertura de Evento</h5>
+                        <p>Edición Dinámica | Highlights</p>
+                    </div>
+                </div>
+
             </div>
+
+            
+            <p class="text-muted text-sm text-center mt-6" id="noResultsMsg" style="display:none;">No hay proyectos en esta categoría todavía.</p>
         </section>
 
         <section class="section-panel" data-gsap-reveal id="metodologia">
             <h2 class="section-heading"><span>[05]</span> METHODOLOGY CORE / PROCESO</h2>
-            <p class="text-color-text-muted text-lg mb-12 max-w-4xl mx-auto text-center">Mi proceso creativo está diseñado para garantizar la máxima calidad y eficiencia en cada entrega, pasando de la visión a la realidad visual.</p>
+            <p class="text-muted text-lg mb-12 max-w-4xl mx-auto text-center">Mi proceso creativo está diseñado para garantizar la máxima calidad y eficiencia en cada entrega, pasando de la visión a la realidad visual.</p>
 
             <div class="grid md:grid-cols-4 gap-4 process-steps-grid">
                 
                 <div class="process-step">
                     <div class="icon-wrapper"><i data-lucide="lightbulb" class="w-10 h-10"></i></div>
                     <h4>1. CONCEPTO</h4>
-                    <p class="text-sm text-color-text-muted">Definición de la idea central y *storytelling*. Guionización y plan de trabajo.</p>
+                    <p class="text-sm text-muted">Definición de la idea central y *storytelling*. Guionización y plan de trabajo.</p>
                 </div>
                 
                 <div class="process-separator hidden md:block"></div>
@@ -779,7 +1140,7 @@
                 <div class="process-step">
                     <div class="icon-wrapper"><i data-lucide="camera" class="w-10 h-10"></i></div>
                     <h4>2. PRODUCCIÓN</h4>
-                    <p class="text-sm text-color-text-muted">Grabación, recopilación de material y captura de assets 3D.</p>
+                    <p class="text-sm text-muted">Grabación, recopilación de material y captura de assets 3D.</p>
                 </div>
                 
                 <div class="process-separator hidden md:block"></div>
@@ -787,7 +1148,7 @@
                 <div class="process-step">
                     <div class="icon-wrapper"><i data-lucide="zap" class="w-10 h-10"></i></div>
                     <h4>3. POST-PRODUCCIÓN</h4>
-                    <p class="text-sm text-color-text-muted">Edición, VFX, Motion Graphics y Etalonaje (Color Grading).</p>
+                    <p class="text-sm text-muted">Edición, VFX, Motion Graphics y Etalonaje (Color Grading).</p>
                 </div>
 
                 <div class="process-separator hidden md:block"></div>
@@ -795,19 +1156,19 @@
                 <div class="process-step">
                     <div class="icon-wrapper"><i data-lucide="send" class="w-10 h-10"></i></div>
                     <h4>4. ENTREGA ELITE</h4>
-                    <p class="text-sm text-color-text-muted">Optimización para la plataforma final y entrega en formato maestro.</p>
+                    <p class="text-sm text-muted">Optimización para la plataforma final y entrega en formato maestro.</p>
                 </div>
             </div>
         </section>
         
 <section class="section-panel" data-gsap-reveal id="codebase">
     <h2 class="section-heading"><span>[06]</span> PROGRAMMING / WEBSITE</h2>
-    <p class="text-color-text-muted text-lg mb-8">Como estudiante de Ingeniería Multimedia, mi perfil se expande al desarrollo web y la programación interactiva. Aquí, la técnica se une a la estética.</p>
+    <p class="text-muted text-lg mb-8">Como estudiante de Ingeniería Multimedia, mi perfil se expande al desarrollo web y la programación interactiva. Aquí, la técnica se une a la estética.</p>
 
     <div class="grid md:grid-cols-2 gap-8">
         
         <div class="code-project-card">
-            <div class="code-project-preview" style="background-image: url('images/PitStop.png');">
+            <div class="code-project-preview" role="img" aria-label="Captura de pantalla del proyecto PitStop 85" style="background-image: url('images/PitStop.png');">
                 </div>
             
             <div class="code-project-content">
@@ -819,7 +1180,7 @@
                 </div>
                 
                 <div class="mt-auto"> 
-                    <a href="https://davidcamachom.github.io/PitStop/index.html" target="_blank" class="btn-primary !p-3 !text-sm !font-semibold">
+                    <a href="https://davidcamachom.github.io/PitStop/index.html" target="_blank" rel="noopener noreferrer" class="btn-primary !p-3 !text-sm !font-semibold">
                         <i data-lucide="external-link" class="w-4 h-4"></i> VER PROYECTO EN VIVO
                     </a>
                     <div class="tech-stack">
@@ -833,7 +1194,7 @@
         </div>
 
         <div class="code-project-card">
-            <div class="code-project-preview" style="background-image: url('images/conjunto360.jpg');">
+            <div class="code-project-preview" role="img" aria-label="Captura de pantalla del proyecto Conjunto 360" style="background-image: url('images/conjunto360.jpg');">
             </div>
             
             <div class="code-project-content">
@@ -845,7 +1206,7 @@
                 </div>
                 
                 <div class="mt-auto"> 
-                    <a href="https://davidcamachom.github.io/Conjunto360" target="_blank" class="btn-primary !p-3 !text-sm !font-semibold">
+                    <a href="https://davidcamachom.github.io/Conjunto360" target="_blank" rel="noopener noreferrer" class="btn-primary !p-3 !text-sm !font-semibold">
                         <i data-lucide="code" class="w-4 h-4"></i> VER PROYECTO EN VIVO
                     </a>
                     <div class="tech-stack">
@@ -862,7 +1223,7 @@
 
     <div class="mt-12">
         <h3 class="sub-heading mb-4">Mis Habilidades de Desarrollo</h3>
-        <p class="text-color-text-muted mb-6">
+        <p class="text-muted mb-6">
             Aunque mi enfoque principal es audiovisual, poseo una base sólida en tecnologías frontend y lógica de programación, esenciales para proyectos multimedia interactivos y producción de contenido para la web.
         </p>
         <div class="flex flex-wrap gap-3">
@@ -880,7 +1241,7 @@
         
         <section class="section-panel" data-gsap-reveal id="stack">
             <h2 class="section-heading"><span>[07]</span> SOFTWARE & TOOLKIT</h2> 
-            <p class="text-color-text-muted text-lg mb-8">Las herramientas con las que doy vida a cada proyecto, garantizando resultados de vanguardia.</p>
+            <p class="text-muted text-lg mb-8">Las herramientas con las que doy vida a cada proyecto, garantizando resultados de vanguardia.</p>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
                 
@@ -914,26 +1275,27 @@
 
         <section class="section-panel" data-gsap-reveal id="photography">
             <h2 class="section-heading"><span>[08]</span> PHOTOGRAPHY / COLLECTION</h2>
-            <p class="text-color-text-muted text-lg mb-8">Crónicas visuales urbanas. Fotografía de moda y retrato que captura el drama y la intensidad de la vida nocturna con un alto contraste cinematográfico.</p>
+            <p class="text-muted text-lg mb-8">Dos registros distintos: crónicas urbanas de alto contraste y sesiones editoriales de ambiente íntimo.</p>
 
+            <h3 class="photo-subgallery-heading">Crónicas Urbanas — Contraste Nocturno</h3>
             <div class="work-gallery !grid-cols-2 lg:!grid-cols-4 !gap-4">
                 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo1.jpg"  class="work-video">
+                    <img src="images/photo1.jpg" alt="Fotografía urbana nocturna 1 - David Camacho" loading="lazy" class="work-video">
                 </div>
 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo2.jpg"class="work-video">
+                    <img src="images/photo2.jpg" alt="Fotografía urbana nocturna 2 - David Camacho" loading="lazy" class="work-video">
                    
                 </div>
 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo3.jpg" class="work-video">
+                    <img src="images/photo3.jpg" alt="Fotografía urbana nocturna 3 - David Camacho" loading="lazy" class="work-video">
                     
                 </div>
 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo4.jpg"class="work-video">
+                    <img src="images/photo4.jpg" alt="Fotografía urbana nocturna 4 - David Camacho" loading="lazy" class="work-video">
                     
                 </div>
             </div>
@@ -941,35 +1303,54 @@
             <div class="work-gallery !grid-cols-2 lg:!grid-cols-4 !gap-4">
                 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo5.jpg"  class="work-video">
+                    <img src="images/photo5.jpg" alt="Fotografía urbana nocturna 5 - David Camacho" loading="lazy" class="work-video">
                 </div>
 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo6.jpg"class="work-video">
+                    <img src="images/photo6.jpg" alt="Fotografía urbana nocturna 6 - David Camacho" loading="lazy" class="work-video">
                    
                 </div>
 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo7.jpg" class="work-video">
+                    <img src="images/photo7.jpg" alt="Fotografía urbana nocturna 7 - David Camacho" loading="lazy" class="work-video">
                     
                 </div>
 
                 <div class="work-item !aspect-[3/4] !shadow-none">
-                    <img src="images/photo8.jpg"class="work-video">
+                    <img src="images/photo8.jpg" alt="Fotografía urbana nocturna 8 - David Camacho" loading="lazy" class="work-video">
                     
                 </div>
+            </div>
+
+            <!-- NUEVO: sesión editorial de luz cálida — reemplaza las rutas cuando subas las fotos -->
+            <h3 class="photo-subgallery-heading">Editorial — Luz Cálida</h3>
+            <div class="work-gallery !grid-cols-2 lg:!grid-cols-4 !gap-4">
+
+                <div class="work-item !aspect-[3/4] !shadow-none">
+                    <img src="images/mar/IMG_8056.JPG.jpeg" alt="Sesión editorial luz cálida 4" loading="lazy" class="work-video">
+                </div>
+
+
+                <div class="work-item !aspect-[3/4] !shadow-none">
+                    <img src="images/mar/WYRK0485.jpg" alt="Sesión editorial luz cálida 2" loading="lazy" class="work-video">
+                </div>
+
+                <div class="work-item !aspect-[3/4] !shadow-none">
+                    <img src="images/mar/XCJA9084.jpg" alt="Sesión editorial luz cálida 3" loading="lazy" class="work-video">
+                </div>
+
             </div>
         </section>
         <footer class="footer-section" data-gsap-reveal>
             <h3>¿Listo para colaborar en tu próximo proyecto visual?</h3>
-            <p class="text-color-text-muted text-lg max-w-2xl mx-auto">
+            <p class="text-muted text-lg max-w-2xl mx-auto">
                 Estoy disponible para roles desafiantes en edición, motion graphics o dirección creativa. Contáctame directamente para explorar cómo podemos dar vida a tus ideas.
                 
             </p>
             <a href="#" id="openContactModal" class="btn-primary">
                 <i data-lucide="mail" class="w-6 h-6"></i> ENVIAR MENSAJE
             </a>
-            <p class="text-xs text-gray-700 mt-16">© 2025 David Santiago Camacho Mora. Todos los derechos reservados.</p>
+            <p class="text-xs text-gray-700 mt-16">© <span id="currentYear"></span> David Santiago Camacho Mora. Todos los derechos reservados.</p>
         </footer>
 
     </div>
@@ -982,23 +1363,31 @@
         lucide.createIcons();
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); 
 
-        // --- LÓGICA DEL CURSOR PERSONALIZADO ---
+        // Año dinámico en el footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- LÓGICA DEL CURSOR PERSONALIZADO (solo en dispositivos con mouse) --- 
+        const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
         const cursor = document.querySelector('.custom-cursor');
         const clickableElements = 'a, button, .play-button, .work-item, .profile-image, .nav-point, .stack-item, .code-project-card, .modal-close-btn, #openContactModal'; // Actualizado para incluir botón de modal
 
-        document.addEventListener('mousemove', e => {
-            gsap.to(cursor, { 
-                x: e.clientX, 
-                y: e.clientY, 
-                duration: 0.2, 
-                ease: "power2.out" 
+        if (hasFinePointer) {
+            document.addEventListener('mousemove', e => {
+                gsap.to(cursor, { 
+                    x: e.clientX, 
+                    y: e.clientY, 
+                    duration: 0.2, 
+                    ease: "power2.out" 
+                });
             });
-        });
 
-        document.querySelectorAll(clickableElements).forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('active'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-        });
+            document.querySelectorAll(clickableElements).forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+            });
+        } else if (cursor) {
+            cursor.style.display = 'none';
+        }
 
 
         // Función para reproducir el Showreel 
@@ -1014,12 +1403,22 @@
         }
         window.playShowreel = playShowreel;
 
+        // Permitir activar el showreel también con teclado (Enter/Espacio)
+        document.querySelector('.video-player-overlay').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                playShowreel();
+            }
+        });
+
 
         // --- LÓGICA DEL MODAL DE CONTACTO ---
         const contactModal = document.getElementById('contactModal');
         const openContactBtn = document.getElementById('openContactModal');
+        let lastFocusedElement = null;
 
         function openContactModal() {
+            lastFocusedElement = document.activeElement;
             gsap.to(contactModal, {
                 opacity: 1,
                 display: 'flex',
@@ -1027,6 +1426,9 @@
             });
             // Deshabilitar el scroll del cuerpo
             document.body.style.overflow = 'hidden';
+            // Mover el foco al botón de cerrar para accesibilidad de teclado
+            const closeBtn = contactModal.querySelector('.modal-close-btn');
+            if (closeBtn) closeBtn.focus();
         }
 
         function closeContactModal() {
@@ -1037,6 +1439,7 @@
                     contactModal.style.display = 'none';
                     // Habilitar el scroll del cuerpo
                     document.body.style.overflow = 'initial';
+                    if (lastFocusedElement) lastFocusedElement.focus();
                 }
             });
         }
@@ -1053,9 +1456,157 @@
                 closeContactModal();
             }
         });
+
+        // Cerrar el modal con la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+                closeContactModal();
+            }
+        });
+
         window.openContactModal = openContactModal;
         window.closeContactModal = closeContactModal;
         // --- FIN LÓGICA DEL MODAL DE CONTACTO ---
+
+        // --- MENÚ MÓVIL (HAMBURGUESA) ---
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const mobileNavMenu = document.getElementById('mobileNavMenu');
+
+        mobileNavToggle.addEventListener('click', () => {
+            const isOpen = mobileNavMenu.classList.toggle('active');
+            mobileNavToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            mobileNavToggle.innerHTML = isOpen
+                ? '<i data-lucide="x" class="w-6 h-6"></i>'
+                : '<i data-lucide="menu" class="w-6 h-6"></i>';
+            lucide.createIcons();
+            document.body.style.overflow = isOpen ? 'hidden' : 'initial';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavMenu.classList.remove('active');
+                mobileNavToggle.setAttribute('aria-expanded', 'false');
+                mobileNavToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+                document.body.style.overflow = 'initial';
+            });
+        });
+        // --- FIN MENÚ MÓVIL ---
+
+        // --- FILTROS DE CATEGORÍA EN PROYECTOS ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const workItems = document.querySelectorAll('#proyectos .work-item[data-category]');
+        const noResultsMsg = document.getElementById('noResultsMsg');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                let visibleCount = 0;
+
+                workItems.forEach(item => {
+                    const matches = filter === 'all' || item.dataset.category === filter;
+                    if (matches) {
+                        item.classList.remove('filtered-out');
+                        gsap.fromTo(item, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+                        visibleCount++;
+                    } else {
+                        item.classList.add('filtered-out');
+                    }
+                });
+
+                noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
+        });
+
+        // --- LIGHTBOX DE VIDEO (galería de Proyectos + proyecto destacado) ---
+        const videoLightbox = document.getElementById('videoLightbox');
+        const lightboxVideo = document.getElementById('lightboxVideo');
+        const lightboxExternalLink = document.getElementById('lightboxExternalLink');
+        let lastFocusedBeforeLightbox = null;
+
+        function openVideoLightbox(videoSrc, externalUrl) {
+            lastFocusedBeforeLightbox = document.activeElement;
+            lightboxVideo.src = videoSrc;
+            if (externalUrl && externalUrl !== '#') {
+                lightboxExternalLink.href = externalUrl;
+                lightboxExternalLink.style.display = 'inline-block';
+            } else {
+                lightboxExternalLink.style.display = 'none';
+            }
+            videoLightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoLightbox() {
+            lightboxVideo.pause();
+            lightboxVideo.src = '';
+            videoLightbox.classList.remove('active');
+            document.body.style.overflow = 'initial';
+            if (lastFocusedBeforeLightbox) lastFocusedBeforeLightbox.focus();
+        }
+        window.closeVideoLightbox = closeVideoLightbox;
+
+        // Clic en cualquier tarjeta de la galería de Proyectos abre el lightbox
+        document.querySelectorAll('#proyectos .work-item[data-video-src]').forEach(item => {
+            item.style.cursor = 'pointer';
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            item.addEventListener('click', () => {
+                openVideoLightbox(item.dataset.videoSrc, item.dataset.external);
+            });
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openVideoLightbox(item.dataset.videoSrc, item.dataset.external);
+                }
+            });
+        });
+
+        // Botones de play del proyecto destacado
+        document.querySelectorAll('.featured-play-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoLightbox(btn.dataset.videoSrc, '#');
+            });
+        });
+
+        videoLightbox.addEventListener('click', (e) => {
+            if (e.target === videoLightbox) closeVideoLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoLightbox.classList.contains('active')) {
+                closeVideoLightbox();
+            }
+        });
+        // --- FIN LIGHTBOX DE VIDEO ---
+
+        // --- LAZY LOAD DE VIDEOS DE LA GALERÍA DE PROYECTOS ---
+        // Solo carga y reproduce el video cuando entra en el viewport, ahorrando datos/ancho de banda.
+        const lazyVideos = document.querySelectorAll('.lazy-video');
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    if (!video.dataset.loaded) {
+                        const source = video.querySelector('source[data-src]');
+                        if (source) {
+                            source.src = source.dataset.src;
+                            video.load();
+                        }
+                        video.dataset.loaded = 'true';
+                    }
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+
+        lazyVideos.forEach(video => videoObserver.observe(video));
+        // --- FIN LAZY LOAD ---
 
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1160,6 +1711,3 @@
 </body>
 
 </html>
-
-
-
